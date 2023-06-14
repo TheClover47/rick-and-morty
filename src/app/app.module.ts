@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CustomMaterialModule } from '../app/materialmodule/materialmodule.module'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { ProfilePopupComponent } from './profile-popup/profile-popup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,13 +24,14 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     NavigationComponent,
     ProfilePopupComponent,
     DashboardComponent,
-    SearchBarComponent
+    SearchBarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
+    CustomMaterialModule,
+    ReactiveFormsModule,
   ],
   exports: [
    
