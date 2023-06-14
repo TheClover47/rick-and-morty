@@ -13,6 +13,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { CustomMaterialModule } from '../app/materialmodule/materialmodule.module';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     BrowserAnimationsModule,
     CustomMaterialModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
    
