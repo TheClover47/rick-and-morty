@@ -1,4 +1,4 @@
-interface character {
+interface Character {
     id: number,
     name: string,
     status: string,

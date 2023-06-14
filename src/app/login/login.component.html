@@ -1,1 +1,39 @@
-<p>login works!</p>
+<div class="page container-fluid h-100">
+    <div class="login row h-100">
+        <div class="my-auto mx-auto text-center col-5">
+    
+        <form *ngIf="!submitted"  class="form rounded-3 p-2" #loginForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+            <h2 class="">Log into your account</h2>
+            <div class="">
+                <mat-form-field class="w-75 mb-2">
+
+                    <input required pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                    type="email" name="email" placeholder="E-Mail" #email="ngModel"
+                    [(ngModel)]="user.email" matInput>
+
+                    <mat-error>E-Mail is required!</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="">
+                <mat-form-field class="w-75 mb-2">
+
+                    <input required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                    type="password" name="password" #password="ngModel"
+                    [(ngModel)]="user.password" matInput placeholder="Password">
+
+                    <mat-error *ngIf="password.errors?.['required']">Password is required!</mat-error>
+                    <mat-error *ngIf="password.errors?.['pattern']">Doesnt match pattern!</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <button mat-raised-button class="m-2" [disabled]="loginForm.form.invalid" type="submit"> Login</button>
+                <button mat-raised-button class="m-2" [disabled]="loginForm.form.invalid" type="button" (click)="addUser()"> Add</button>
+                <div class="mt-2">
+                    <p>Dont have an account? <a routerLink="/register">Register</a></p>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    </div>
+</div>
