@@ -35,7 +35,7 @@ export class RegisterComponent implements OnInit{
     password: ['', [Validators.required, Validators.pattern(/(?=.*\d.*)(?=.*[a-zA-Z].*)(?=.*[!#\$%&\?@].*).{8,}/)]],
   })
 
-  user: User = {name: '', email: '', password: ''};
+  user = {name: '', email: '', password: '', lastLogin: ''};
 
   openRegSnackBar() {
     this._snackBar.open("You have registered successfully!", "Alright!", {

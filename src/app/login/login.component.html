@@ -8,7 +8,7 @@
                 <mat-form-field class="w-75 mb-2">
 
                     <input required 
-                    type="email" name="email" pattern="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*.{1,}$" placeholder="E-Mail" #email="ngModel"
+                    type="email" name="email" placeholder="E-Mail" #email="ngModel" pattern=""
                     [(ngModel)]="user.email" matInput>
 
                     <mat-error>E-Mail is required!</mat-error>
