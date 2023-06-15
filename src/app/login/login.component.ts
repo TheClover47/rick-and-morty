@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   user:User = {name: '',email: '', password:''};
   submitted = false;
+  regExPattern = "/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*.{1,}$/";
 
   constructor(private _loginService: UserService, private router: Router){}
 

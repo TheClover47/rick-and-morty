@@ -3,6 +3,7 @@ import { EmailValidator, FormBuilder, FormControl, Validators } from '@angular/f
 import { userExistsValidator } from '../shared/user.validator';
 import { User } from '../models/user';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent implements OnInit{
 
-  constructor(private fb: FormBuilder, private router: Router){}
+  constructor(private fb: FormBuilder, private router: Router, private _snackBar: MatSnackBar){}
 
   ngOnInit(): void {
   }
@@ -30,11 +31,17 @@ export class RegisterComponent implements OnInit{
 
   registrationForm = this.fb.group({
     name: ['', [Validators.required]],
-    email: ['', [Validators.required, Validators.pattern(/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/)], userExistsValidator],
-    password: ['', [Validators.required, Validators.pattern(/(?=.*\d.*)(?=.*[a-zA-Z].*)(?=.*[!#\$%&\?].*).{8,}/)]],
+    email: ['', [Validators.required, Validators.pattern(/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*.{1,}$/)], userExistsValidator],
+    password: ['', [Validators.required, Validators.pattern(/(?=.*\d.*)(?=.*[a-zA-Z].*)(?=.*[!#\$%&\?@].*).{8,}/)]],
   })
 
   user: User = {name: '', email: '', password: ''};
+
+  openRegSnackBar() {
+    this._snackBar.open("You have registered successfully!", "Alright!", {
+      duration: 10000, verticalPosition: 'top', panelClass: 'snackBar'
+    });
+  }
 
   onSubmit(){
     const get = localStorage.getItem('users') || "[]";
@@ -48,6 +55,7 @@ export class RegisterComponent implements OnInit{
       users.push(this.user)
       localStorage.setItem('users', JSON.stringify(users))
     }
+    this.openRegSnackBar();
     this.router.navigate(['/login']);
   }
 }

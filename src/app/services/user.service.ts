@@ -14,19 +14,6 @@ export class UserService {
   }
 
   constructor() { }
-  userExists(credentials: User){
-    // for(let user of users){
-    //   if(user.email===credentials.email && user.password===credentials.password){
-    //     credentials.name = user.name;
-    //     return true;
-    //   }
-    // }
-    if(localStorage.getItem(credentials.email)){
-      alert("You exist!");
-      return true;
-    }
-    return false;
-  }
 
   // UserRegistration() {
   //   storedUsers = localStorage.['UsersLogin'] ? JSON.parse(localStorage.['UsersLogin']) : [];
