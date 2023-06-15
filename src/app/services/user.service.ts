@@ -5,6 +5,8 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class UserService {
+
+
   
   add(key: string, value: User){
     value.name = 'Bob';
@@ -40,16 +42,19 @@ export class UserService {
   loginUser(user: User){
       const loginEmail = user.email;
       const loginPass = user.password;
-      const email = localStorage.getItem(loginEmail);
-      if (email) {
-          const storedUser = JSON.parse(email);
-          if (storedUser.email===loginEmail && storedUser.password===loginPass) {
-              return console.log('Login successful')
+      const users = localStorage.getItem('users');
+      if (users) {
+          const storedUser: User[] = JSON.parse(users);
+          const login: User[] = storedUser.filter(check => { return check.email === user.email && check.password === user.password});
+          if (login.length) {
+              localStorage.setItem('currentUser', JSON.stringify(login[0]));
+              user.name = login[0].name
+              return true;
           } else {
-              return console.log('Wrong credentials')
+              return false;
           }
       } else {
-          return console.log('Wrong credentials') // Don't say "Not a registered user"
+          return false;// Don't say "Not a registered user"
       }
   }
 }

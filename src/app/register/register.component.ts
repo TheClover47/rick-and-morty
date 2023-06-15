@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EmailValidator, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { userExistsValidator } from '../shared/user.validator';
+import { User } from '../models/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +11,7 @@ import { userExistsValidator } from '../shared/user.validator';
 })
 export class RegisterComponent implements OnInit{
 
-  constructor(private fb: FormBuilder){}
+  constructor(private fb: FormBuilder, private router: Router){}
 
   ngOnInit(): void {
   }
@@ -32,9 +34,20 @@ export class RegisterComponent implements OnInit{
     password: ['', [Validators.required, Validators.pattern(/(?=.*\d.*)(?=.*[a-zA-Z].*)(?=.*[!#\$%&\?].*).{8,}/)]],
   })
 
+  user: User = {name: '', email: '', password: ''};
+
   onSubmit(){
-    if(typeof(this.email.value) === 'string'){
-      localStorage.setItem(this.email.value, JSON.stringify(this.registrationForm.value))
+    const get = localStorage.getItem('users') || "[]";
+    if(get){
+      const users: User[] = JSON.parse(get);
+      if(this.name.value && typeof(this.registrationForm.controls.email.value) == 'string' && this.registrationForm.controls.email.value && this.password.value){
+        this.user.name = this.name.value;
+        this.user.email = this.registrationForm.controls.email.value;
+        this.user.password = this.password.value;
+      }
+      users.push(this.user)
+      localStorage.setItem('users', JSON.stringify(users))
     }
+    this.router.navigate(['/login']);
   }
 }

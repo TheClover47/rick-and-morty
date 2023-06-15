@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { User } from '../models/user';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-
+  user: User = JSON.parse(localStorage.getItem('currentUser') || '');
 }

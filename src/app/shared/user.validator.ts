@@ -7,10 +7,11 @@ export function userExistsValidator(control: FormControl): Observable<any> {
 }
 
 function userExists(data: string) {
-    const get = localStorage.getItem(data)
+    const get = localStorage.getItem('users')
     if(data && get){
-        const exists: User = JSON.parse(get);
-        if(exists.email == data){
+        const exists: User[] = JSON.parse(get) || [];
+        const duplicateUser = exists.filter(user => { return user.email === data; }).length;
+        if(duplicateUser){
             return {'emailExists': {value: data}}
         }
         return null

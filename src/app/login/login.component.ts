@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  user = new User('','','');
+  user:User = {name: '',email: '', password:''};
   submitted = false;
 
   constructor(private _loginService: UserService, private router: Router){}
@@ -20,11 +20,12 @@ export class LoginComponent {
   }
 
   onSubmit(){
-    if(this._loginService.userExists(this.user)){
-      // this.router.navigate(['/dashboard']);
+    const status: Boolean = this._loginService.loginUser(this.user);
+    if(status){
       alert("Welcome "+this.user.name+"!");
       this.submitted = true;
+      this.router.navigate(['/dashboard']);
     }
-    else alert("This user is not registered!");
+    else alert("Wrong credentials!")/* alert("This user is not registered!"); */
   }
 }
