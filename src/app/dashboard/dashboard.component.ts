@@ -7,5 +7,9 @@ import { User } from '../models/user';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  user: User = JSON.parse(localStorage.getItem('currentUser') || '');
+  user: any;
+  constructor(){
+    this.user = JSON.parse(localStorage.getItem('currentUser') || '');
+    console.log(this.user)
+  }
 }

@@ -30,11 +30,11 @@ export class RegisterComponent implements OnInit{
 
   registrationForm = this.fb.group({
     name: ['', [Validators.required]],
-    email: ['', [Validators.required, Validators.pattern(/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/)], userExistsValidator],
-    password: ['', [Validators.required, Validators.pattern(/(?=.*\d.*)(?=.*[a-zA-Z].*)(?=.*[!#\$%&\?].*).{8,}/)]],
+    email: ['', [Validators.required, Validators.pattern(/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*.{1,}$/)], userExistsValidator],
+    password: ['', [Validators.required, Validators.pattern(/(?=.*\d.*)(?=.*[a-zA-Z].*)(?=.*[!#\$%&\?@].*).{8,}/)]],
   })
 
-  user: User = {name: '', email: '', password: ''};
+  user = {name: '', email: '', password: '', lastLogin: ''};
 
   onSubmit(){
     const get = localStorage.getItem('users') || "[]";
