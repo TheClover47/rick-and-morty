@@ -37,7 +37,7 @@ export class UserService {
       const users = localStorage.getItem('users');
       if (users) {
           const storedUser: User[] = JSON.parse(users);
-          const login: User[] = storedUser.filter(check => { console.log(check); return check.email === user.email && check.password === user.password});
+          const login: User[] = storedUser.filter(check => { return check.email === user.email && check.password === user.password});
           if (login.length) {
               this.currUser.name = login[0].name;
               this.currUser.email = login[0].email;

@@ -10,6 +10,5 @@ export class DashboardComponent {
   user: any;
   constructor(){
     this.user = JSON.parse(localStorage.getItem('currentUser') || '');
-    console.log(this.user)
   }
 }
