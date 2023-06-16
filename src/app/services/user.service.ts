@@ -57,4 +57,8 @@ export class UserService {
           return false;// Don't say "Not a registered user"
       }
   }
+
+  loggedIn(){
+    return !!localStorage.getItem('currentUser')
+  }
 }
