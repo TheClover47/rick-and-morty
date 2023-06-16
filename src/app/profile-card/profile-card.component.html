@@ -1,4 +1,6 @@
 <div class="p-1">
     <button mat-raised-button type="button" (click)="test()">Click Me</button>
-    <p *ngFor="let character of characters.results">Hello {{character?.name}}</p>
+    <div>
+        <app-profile-popup [character]="character" *ngFor="let character of characters?.results"></app-profile-popup>
+    </div>
 </div>

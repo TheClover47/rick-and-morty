@@ -9,7 +9,7 @@ export class RnmApiService {
   constructor(private http: HttpClient) { }
 
   getData(){
-    let url="https://rickandmortyapi.com/api/character";
+    let url="https://rickandmortyapi.com/api/character/?page=3&status=alive";
     return this.http.get(url);
   }
 }
