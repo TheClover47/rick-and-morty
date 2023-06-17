@@ -41,7 +41,8 @@
                     </mat-form-field>
                 </div>
                 <div>
-                    <button mat-button class="register" type="submit" [disabled]="registrationForm.invalid"> Create!</button>
+                    <button mat-button class="register" type="submit" [disabled]="registrationForm.invalid"
+                    [class.stroke]="registrationForm.valid" [class.text-white]="registrationForm.valid"> Create!</button>
                     <!-- <button mat-raised-button class="m-2" (click)="openRegSnackBar()" type="button"> Test</button> -->
                 </div>
             </form>

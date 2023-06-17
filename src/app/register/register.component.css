@@ -30,6 +30,9 @@ img {
     display: flex;
     justify-content: center;
 }
+.stroke {
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
 
 @media screen and (max-width: 500px){
     .grid{
