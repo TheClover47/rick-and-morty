@@ -19,16 +19,10 @@ const initialState: Array<UserItem> = [
     state: Array<UserItem> = initialState,
     action: UserAction
   ) {
-    console.log('help')
-    console.log(state)
     switch (action.type) {
       case UserActionType.ADD_ITEM:
-        console.log('here')
-        console.log(...state)
         return [...state, action.payload];
       default:
-        console.log('BEAR')
-        console.log(...state)
         return state;
     }
   }

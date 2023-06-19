@@ -4,12 +4,15 @@
 
 .mat-toolbar {
     background-color: #97ce4c;
-}
-.mat-sidenav{
-    width: 15%;
-}
-
-.navigation {
     display: none;
 }
 
+@media only screen and (max-width: 427px) {
+    .mat-toolbar {
+        background-color: #97ce4c;
+        display: flex;
+    }
+    .mat-sidenav{
+        width: 45%;
+    }
+}

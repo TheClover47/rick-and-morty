@@ -21,7 +21,6 @@ export class DashboardComponent implements OnInit{
   ngOnInit(): void {
     this.store.select(state => state).subscribe(data => {
       this.userItems = data.users.map(data => {return data});
-      console.log(this.userItems);
     });
   }
 }

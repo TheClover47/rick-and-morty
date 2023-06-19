@@ -1,6 +1,6 @@
 .navigation {
     background-color: #97ce4c;
-    display: none;
+    display: flex;
 }
 .mat-toolbar {
     background-color: #97ce4c;
@@ -16,4 +16,5 @@
     .navigation {
         display: none;
     }
+    
 }
