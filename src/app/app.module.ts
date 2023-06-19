@@ -15,8 +15,10 @@ import { CustomMaterialModule } from '../app/materialmodule/materialmodule.modul
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
-
+import { CardNavigationComponent } from './card-navigation/card-navigation.component';
+import { userReducer } from './store/reducers/user.reducer';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './store/reducers';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProfilePopupComponent,
     DashboardComponent,
     SearchBarComponent,
-    routingComponents
+    routingComponents,
+    CardNavigationComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,10 @@ import { HttpClientModule } from '@angular/common/http';
     CustomMaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot(
+      reducers
+    ),
   ],
   exports: [
    

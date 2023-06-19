@@ -1,0 +1,42 @@
+.navbar{
+    position: absolute;
+    transform: inherit;
+    height: 100px;
+    z-index: 100;
+    background-color: #97ce4c;
+}
+
+.mat-mdc-radio-button.mat-accent {
+    --mdc-radio-disabled-selected-icon-color: #000;
+    --mdc-radio-disabled-unselected-icon-color: #000;
+    --mdc-radio-unselected-hover-icon-color: #212121;
+    --mdc-radio-unselected-icon-color: rgba(0, 0, 0, 0.54);
+    --mdc-radio-unselected-pressed-icon-color: rgba(0, 0, 0, 0.54);
+    --mdc-radio-selected-focus-icon-color: white;
+    --mdc-radio-selected-hover-icon-color: white;
+    --mdc-radio-selected-icon-color: white;
+    --mdc-radio-selected-pressed-icon-color: white;
+    --mat-radio-ripple-color: #000;
+    --mat-radio-checked-ripple-color: white;
+    --mat-radio-disabled-label-color: rgba(0, 0, 0, 0.38);
+}
+
+.sidenav{
+    height: 100%;
+}
+
+.select{
+    align-items: center;
+}
+
+mat-sidenav{
+    width: 200px;
+    height: fit-content;
+    background: #97ce4c;
+    color: black;
+    text-align: center;
+}
+
+button{
+    background-color: white;
+}
