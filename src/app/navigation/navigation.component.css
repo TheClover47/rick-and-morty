@@ -1,3 +1,19 @@
 .navigation {
     background-color: #97ce4c;
+    display: none;
+}
+.mat-toolbar {
+    background-color: #97ce4c;
+}
+.mat-icon {
+    color: black;
+}
+.content{
+    height: 88vh;
+}
+
+@media only screen and (max-width: 427px) {
+    .navigation {
+        display: none;
+    }
 }

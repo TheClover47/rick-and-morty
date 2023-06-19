@@ -15,6 +15,8 @@ import { CustomMaterialModule } from '../app/materialmodule/materialmodule.modul
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import { userReducer } from './store/reducers/user.reducer';
 
 
 
@@ -37,7 +39,10 @@ import { HttpClientModule } from '@angular/common/http';
     CustomMaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({
+      user: userReducer,
+    })
   ],
   exports: [
    

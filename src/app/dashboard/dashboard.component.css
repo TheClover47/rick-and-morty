@@ -1,0 +1,15 @@
+.dashboard{
+    height: 88vh;
+}
+
+.mat-toolbar {
+    background-color: #97ce4c;
+}
+.mat-sidenav{
+    width: 15%;
+}
+
+.navigation {
+    display: none;
+}
+

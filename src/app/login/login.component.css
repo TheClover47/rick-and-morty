@@ -1,9 +1,8 @@
-.page{
-    background: #97ce4c;
-}
+/* .page{
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(148,223,46,1) 0%, rgba(151,206,76,1) 50%, rgba(68,40,29,1) 100%);
+} */
 .login {
     background: url('https://s1.thcdn.com/design-assets/images/licensed-images/rickandmorty.png');
-    /* https://media0.giphy.com/media/i2tLw5ZyikSFdkeGHT/giphy.gif?cid=ecf05e47kgzjeomhjk5af66yj4dam9ox8ypr0qc4lnsfbbr2&ep=v1_gifs_related&rid=giphy.gif&ct=s */
     background-position: center;
     background-repeat: no-repeat;
     background-size: 650px 650px;
@@ -17,13 +16,47 @@
     box-shadow: 0px 15px 15px 5px rgba(0, 0, 0, 0.5);
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1024px) {
     .login{
-        background-size: 350px 350px;
+        
         margin: 0;
     }
     .form{
         width: 100%;
         
     }
-  }
+    .content {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .login{
+        
+        margin: 0;
+    }
+    .form{
+        width: 100%;
+        
+    }
+    .content {
+        width: 60%;
+    }
+    a {
+        color: black;
+        font-weight: bold;
+    }
+}
+
+@media only screen and (max-width: 426px) {
+    .page {
+        padding: 0;
+    }
+    .login {
+        width: 100%;
+        background-size: 450px 450px;
+    }
+    .content {
+        width: 100%;
+    }
+}

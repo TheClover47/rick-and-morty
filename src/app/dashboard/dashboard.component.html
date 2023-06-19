@@ -1,7 +1,29 @@
 <app-navigation></app-navigation>
-<div class="container-fluid mx-auto row h-100">
-    <div class="mt-5 text-center">
-        <h2 class="fs-1">Welcome {{user.name}}</h2>
-        <p>Last login time: {{user.lastLogin }}</p>
-    </div>
-</div>
+
+<mat-toolbar>
+    <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+        <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+    </button>
+    <h2 class="p-2 my-auto text-black">Rick-N-Morty</h2>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav>
+        <mat-nav-list>
+            <a mat-list-item>Browse</a>
+            <a mat-list-item>Profile</a>
+            <a mat-list-item>Log out</a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="dashboard container-fluid mx-auto row">
+            <div class="mt-5 text-center">
+                <h2 class="fs-1">Welcome {{user.name}}</h2>
+                <p>Last login time: {{user.lastLogin }}</p>
+            </div>
+            <div class="container-fluid mx-auto text-center">
+                <app-search-bar></app-search-bar>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

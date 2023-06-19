@@ -12,12 +12,14 @@ export class ProfileCardComponent {
   gender: any;
   status: any;
 
-  constructor(private rnm: RnmApiService){
-    this.rnm.getData().subscribe(data=>{this.characters = data});
+  constructor(private rnm: RnmApiService){}
+
+  ngOnInit(){
+    this.rnm.getCharactersData().subscribe(data=>{this.characters = data});
   }
 
-  test(){
-    console.log(this.characters);
-  }
+  // test(){
+  //   console.log(this.characters);
+  // }
 
 }

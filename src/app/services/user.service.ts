@@ -46,7 +46,9 @@ export class UserService {
               this.currUser.email = login[0].email;
               this.currUser.currLogin = formatDate(new Date(), 'dd-MM-yyyy hh:mm:ss a', 'en');
               this.userClone = login[0];
-              this.currUser.lastLogin = this.userClone.lastLogin;
+              if(this.userClone.lastLogin)
+                this.currUser.lastLogin = this.userClone.lastLogin
+              else this.currUser.lastLogin = "None";
               localStorage.setItem('currentUser', JSON.stringify(this.currUser))
               user.name = login[0].name
               return true;

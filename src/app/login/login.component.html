@@ -1,6 +1,6 @@
 <div class="page container-fluid h-100">
     <div class="login row h-100">
-        <div class="my-auto mx-auto text-center col-5">
+        <div class="content my-auto mx-auto text-center col-5">
     
         <form *ngIf="!submitted"  class="form rounded-3 p-2" #loginForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
             <h2 class="">Log into your account</h2>
@@ -28,7 +28,7 @@
             <div>
                 <button mat-raised-button class="m-2" [disabled]="loginForm.form.invalid" type="submit"> Login</button>
                 <div class="mt-2">
-                    <p>Dont have an account? <a routerLink="/register">Register</a></p>
+                    <p>Dont have an account? <a class="text-black fw-bold" routerLink="/register">Register</a></p>
                 </div>
             </div>
         </form>
