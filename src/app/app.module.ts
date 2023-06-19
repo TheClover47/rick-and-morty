@@ -15,10 +15,10 @@ import { CustomMaterialModule } from '../app/materialmodule/materialmodule.modul
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { StoreModule } from '@ngrx/store';
+import { CardNavigationComponent } from './card-navigation/card-navigation.component';
 import { userReducer } from './store/reducers/user.reducer';
-
-
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './store/reducers';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,8 @@ import { userReducer } from './store/reducers/user.reducer';
     ProfilePopupComponent,
     DashboardComponent,
     SearchBarComponent,
-    routingComponents
+    routingComponents,
+    CardNavigationComponent
   ],
   imports: [
     BrowserModule,
@@ -40,9 +41,9 @@ import { userReducer } from './store/reducers/user.reducer';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    StoreModule.forRoot({
-      user: userReducer,
-    })
+    StoreModule.forRoot(
+      reducers
+    ),
   ],
   exports: [
    

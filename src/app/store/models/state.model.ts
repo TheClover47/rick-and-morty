@@ -1,5 +1,5 @@
-import { CourseItem } from './courseItem.model';
+import { UserItem } from "./userItem.model";
 
-export interface State {
-  readonly courses: Array<CourseItem>;
+export interface AppState {
+  users: Array<UserItem>;
 }
