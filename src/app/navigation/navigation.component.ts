@@ -22,7 +22,6 @@ export class NavigationComponent {
   }
 
   logOut(){
-    alert("Logging out!");
     this.router.navigate(['/login']);
     this.openLogOutSnackBar();
     this.user = this.users.filter(check => {
