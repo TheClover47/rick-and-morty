@@ -15,11 +15,7 @@ export class ProfileCardComponent {
   constructor(private rnm: RnmApiService){}
 
   ngOnInit(){
-    this.rnm.getCharactersData().subscribe(data=>{this.characters = data});
+    this.rnm.getCharactersData('').subscribe(data=>{this.characters = data});
   }
-
-  // test(){
-  //   console.log(this.characters);
-  // }
 
 }

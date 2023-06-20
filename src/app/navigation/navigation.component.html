@@ -1,4 +1,6 @@
+
 <div class="navigation flex-row-reverse p-2">
+        
         <div class="p-1">
             <button mat-raised-button type="button" (click)="logOut()">Log out</button>
         </div>
@@ -9,6 +11,10 @@
 
         <div class="p-1">
             <button mat-raised-button routerLink="/browse" type="button">Browse</button>
+        </div>
+
+        <div class="container">
+            <app-search-bar></app-search-bar>
         </div>
 </div>
 

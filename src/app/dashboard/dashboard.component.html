@@ -19,11 +19,9 @@
         <div class="dashboard container-fluid mx-auto row">
             <div class="mt-5 text-center">
                 <h2 class="fs-1">Welcome {{user.name}}</h2>
-                <p>Last login time: {{user.lastLogin }}</p>
+                <p *ngIf="user.lastLogin!=='None'">Last login time: {{user.lastLogin }}</p>
             </div>
-            <div class="container-fluid mx-auto text-center">
-                <app-search-bar></app-search-bar>
-            </div>
+            
             <h4>Testing NgRx</h4>
             <p *ngFor="let user of userItems">
                 {{user.password}} Gunārs

@@ -1,17 +1,8 @@
-<form class="example-form">
-    <mat-form-field class="example-full-width">
-      <mat-label>Character</mat-label>
-      <input type="text"
-             placeholder="Pick one"
-             aria-label="Number"
-             matInput
-             [formControl]="myControl"
-             [matAutocomplete]="auto">
-      <mat-autocomplete #auto="matAutocomplete">
-        <mat-option *ngFor="let option of options" [value]="option">
-          {{option}}
-        </mat-option>
-      </mat-autocomplete>
-    </mat-form-field>
-  </form>
+<div class="container searchBarDiv">
+  <form [formGroup]="searchForm" (ngSubmit)="onSearchSubmit()" class="searchBar">
+      <mat-form-field>
+        <input matInput class="searchBarInput" type="text" placeholder="Search..." formControlName="searchValue">
+      </mat-form-field>
+    </form>
+</div>
   
