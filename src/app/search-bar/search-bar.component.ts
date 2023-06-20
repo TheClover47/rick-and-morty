@@ -11,21 +11,21 @@ export class SearchBarComponent implements OnInit {
   constructor(private fb: FormBuilder, private rnm: RnmApiService){}
 
   ngOnInit(){
-    this.fetchCharacterData('');
+    this.fetchCharacterData();
   }
 
   characters: any;
   searchValue = '';
   searchForm = this.fb.nonNullable.group({searchValue: ''});
 
-  fetchCharacterData(searchValue: string){
-    this.rnm.getCharactersData(searchValue).subscribe(data=>{this.characters = data});
+  fetchCharacterData(){
+    this.rnm.getCharactersData().subscribe(data=>{this.characters = data});
   }
 
   onSearchSubmit(){
     // alert(this.searchForm.get('searchValue'));
     this.searchValue = this.searchForm.value.searchValue ?? '';
-    this.fetchCharacterData(this.searchValue);
+    this.fetchCharacterData();
 
   }
 
