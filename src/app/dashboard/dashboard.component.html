@@ -24,6 +24,12 @@
             <div class="container-fluid mx-auto text-center">
                 <app-search-bar></app-search-bar>
             </div>
+            <h4>Testing NgRx</h4>
+            <p *ngFor="let user of userItems">
+                {{user.password}} Gunārs
+            </p>
+            {{userItems}}
+            <p>LOL</p>
         </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
