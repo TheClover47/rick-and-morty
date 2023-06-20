@@ -17,11 +17,13 @@ const initialState: Array<UserItem> = [
   ];
   export function userReducer(
     state: Array<UserItem> = initialState,
-    action: UserAction
+    action: any,
   ) {
     switch (action.type) {
       case UserActionType.ADD_ITEM:
         return [...state, action.payload];
+      case UserActionType.REMOVE_ITEM:
+        return state.filter(user => {return user == action.payload})
       default:
         return state;
     }

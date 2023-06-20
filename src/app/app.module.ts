@@ -19,6 +19,7 @@ import { CardNavigationComponent } from './card-navigation/card-navigation.compo
 import { userReducer } from './store/reducers/user.reducer';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './store/reducers';
+import { PopupComponentComponent } from './popup-component/popup-component.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { reducers } from './store/reducers';
     DashboardComponent,
     SearchBarComponent,
     routingComponents,
-    CardNavigationComponent
+    CardNavigationComponent,
+    PopupComponentComponent
   ],
   imports: [
     BrowserModule,

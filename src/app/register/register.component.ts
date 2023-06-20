@@ -4,6 +4,9 @@ import { userExistsValidator } from '../shared/user.validator';
 import { User } from '../models/user';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Store } from '@ngrx/store';
+import { AppState } from '../store/models/state.model';
+import { AddItemAction, UserActionType } from '../store/actions/user.action';
 
 @Component({
   selector: 'app-register',
@@ -12,7 +15,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class RegisterComponent implements OnInit{
 
-  constructor(private fb: FormBuilder, private router: Router, private _snackBar: MatSnackBar){}
+  constructor(private fb: FormBuilder, private router: Router, private store: Store<AppState> ,private _snackBar: MatSnackBar){}
 
   ngOnInit(): void {
   }
@@ -54,6 +57,7 @@ export class RegisterComponent implements OnInit{
       }
       users.push(this.user)
       localStorage.setItem('users', JSON.stringify(users))
+      this.store.dispatch(new AddItemAction(this.user));
     }
     this.openRegSnackBar();
     this.router.navigate(['/login']);

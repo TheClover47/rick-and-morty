@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { RnmApiService } from '../services/rnm-api.service';
 import { Character } from '../models/character';
+import { Store } from '@ngrx/store';
+import { AddCharacterAction } from '../store/actions/character.action';
+import { AppState } from '../store/models/state.model';
 
 @Component({
   selector: 'app-profile-card',
@@ -8,14 +11,18 @@ import { Character } from '../models/character';
   styleUrls: ['./profile-card.component.css']
 })
 export class ProfileCardComponent {
-  characters: any;
-  gender: any;
+  characters!: Array<Character>;
+  character!: Character;
   status: any;
 
-  constructor(private rnm: RnmApiService){}
+  constructor(private rnm: RnmApiService, private store: Store<AppState>){}
 
   ngOnInit(){
-    this.rnm.getCharactersData('').subscribe(data=>{this.characters = data});
+    this.rnm.getCharactersData().subscribe(data=>{
+      this.characters = data.results;
+      for(this.character of this.characters)
+      this.store.dispatch(new AddCharacterAction(this.character))
+    });
   }
 
 }
