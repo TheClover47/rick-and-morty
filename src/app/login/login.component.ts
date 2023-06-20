@@ -23,7 +23,6 @@ export class LoginComponent {
   onSubmit(){
     const status: Boolean = this._loginService.loginUser(this.user);
     if(status){
-      alert("Welcome "+this.user.name+"!");
       this.submitted = true;
       this.router.navigate(['/dashboard']);
     }
