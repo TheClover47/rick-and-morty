@@ -33,10 +33,12 @@
         <p *ngIf="user.lastLogin">Last login time: {{user.lastLogin }}</p>
         <p *ngIf="!user.lastLogin">First time loging in!</p>
     </div>
-</div>
+</div>-->
 <h4>Testing NgRx</h4>
     <p *ngFor="let user of userItems">
-        {{user.password}} Gunārs
+        {{user.name}}
     </p>
-    {{userItems}}
-    <p>LOL</p> -->
+<h1>Characters?</h1>
+    <p *ngFor="let user of characterItems">
+        {{user.name}}
+    </p>

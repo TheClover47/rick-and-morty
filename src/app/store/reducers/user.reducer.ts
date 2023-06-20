@@ -17,18 +17,14 @@ const initialState: Array<UserItem> = [
   ];
   export function userReducer(
     state: Array<UserItem> = initialState,
-    action: UserAction
+    action: any,
   ) {
-    console.log('help')
-    console.log(state)
     switch (action.type) {
       case UserActionType.ADD_ITEM:
-        console.log('here')
-        console.log(...state)
         return [...state, action.payload];
+      case UserActionType.REMOVE_ITEM:
+        return state.filter(user => {return user == action.payload})
       default:
-        console.log('BEAR')
-        console.log(...state)
         return state;
     }
   }

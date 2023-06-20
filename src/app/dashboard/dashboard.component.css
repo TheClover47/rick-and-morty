@@ -9,7 +9,17 @@
     width: 15%;
 }
 
-.navigation {
+.mat-sidenav{
     display: none;
+}
+
+mat-icon-button{
+    display: none;
+}
+
+@media only screen and (max-width: 427px) {
+    .navigation {
+        display: none;
+    }
 }
 

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store} from '@ngrx/store';
-import {Observable} from 'rxjs';
 import { UserItem } from '../store/models/userItem.model';
 import {AppState} from '../store/models/state.model';
+import { Character } from '../models/character';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,6 +12,7 @@ import {AppState} from '../store/models/state.model';
 export class DashboardComponent implements OnInit{
   user: any;
   userItems!: Array<UserItem>;
+  characterItems!: Array<Character>;
   constructor(private store: Store<AppState>){
     this.user = JSON.parse(localStorage.getItem('currentUser') || '');
   }
@@ -21,7 +22,7 @@ export class DashboardComponent implements OnInit{
   ngOnInit(): void {
     this.store.select(state => state).subscribe(data => {
       this.userItems = data.users.map(data => {return data});
-      console.log(this.userItems);
+      this.characterItems = data.characters.map(data => {return data});
     });
   }
 }
