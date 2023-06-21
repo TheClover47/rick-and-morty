@@ -1,0 +1,27 @@
+.searchIcon{
+    margin-top: 10px;
+    position: absolute;
+    font-size: 20pt;
+}
+.searchInput{
+    width: 85%;
+    height: 35px;
+    margin-top: 6px;
+    border: none;
+    border-radius: 30px;
+    margin-left: 15%;
+    margin-right: 15%;
+    box-sizing: none;
+    outline: none;
+    font-size: 14pt;
+}
+.searchInput:active{
+    border: none;
+}
+.searchBar{
+    margin-left: 150px;
+    width: 350px;
+    height: 45px;
+    background-color: white;
+    border-radius: 30px;
+}

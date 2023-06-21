@@ -1,26 +1,34 @@
 <!-- [ngClass]="isMobile ? 'navigation-mobile' : 'navigation'" -->
 <div class="navigation flex-row-reverse p-2">
-    <div class="p-1">
-      <button mat-raised-button type="button" (click)="logOut()">Log out</button>
+    <div class="p-2 text-center">
+
+      <a class="nav-link" (click)="logOut()">
+        <mat-icon class="mx-auto">logout</mat-icon>
+        <p>Log out</p>
+      </a>
     </div>
-  
-    <div class="p-1">
-      <button mat-raised-button routerLink="/dashboard" type="button">
-        Profile
-      </button>
+
+    <div class="p-2 text-center">
+
+      <a class="nav-link" routerLink="/dashboard">
+        <mat-icon class="mx-auto">person</mat-icon>
+        <p>Profile</p>
+      </a>
     </div>
-  
-    <div class="p-1">
-      <button mat-raised-button routerLink="/browse" type="button">Browse</button>
+
+    <div class="p-2 text-center ">
+        <a class="nav-link" routerLink="/browse">
+          <mat-icon>home</mat-icon>
+          <p>Browse</p>
+        </a>
     </div>
-  
-    <div class="container">
+    <div class="mx-auto">
       <app-search-bar></app-search-bar>
     </div>
   </div>
 
 <!-- top nav -->
-<mat-toolbar>
+<mat-toolbar class="sticky-top">
   <button mat-icon-button (click)="sidenav.toggle()">
     <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
     <mat-icon *ngIf="sidenav.opened">close</mat-icon>

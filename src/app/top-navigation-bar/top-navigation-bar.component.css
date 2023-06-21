@@ -2,6 +2,12 @@
     background-color: #97ce4c;
     display: flex;
     flex-direction:row-reverse;
+    height: 10%;
+    align-items: center;
+}
+
+.nav-item{
+    position: absolute;
 }
 
 .mat-icon {
@@ -20,17 +26,23 @@ mat-sidenav-container{
 
 .navbar{
     position: absolute;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     transform: inherit;
     background-color: rgba(255, 255, 255, 0);
+    z-index: 100;
 }
-.sidenavCont{
-    height: 100%;
+.nav-link{
+    font-size: 14pt;
 }
-/* .mat-drawer-backdrop{
-    display: none;
-} */
+.nav-link:hover{
+    text-shadow: 0px 0px 1px black;
+    
+}
+a{
+    cursor: pointer;
+}
+
 
 @media only screen and (max-width: 450px) {
    
