@@ -1,23 +1,27 @@
 <!-- [ngClass]="isMobile ? 'navigation-mobile' : 'navigation'" -->
 <div class="navigation flex-row-reverse p-2">
-    <div class="p-1">
-      <button mat-raised-button type="button" (click)="logOut()">Log out</button>
-    </div>
-  
-    <div class="p-1">
-      <button mat-raised-button routerLink="/dashboard" type="button">
-        Profile
-      </button>
-    </div>
-  
-    <div class="p-1">
-      <button mat-raised-button routerLink="/browse" type="button">Browse</button>
-    </div>
-  
-    <div class="container">
-      <app-search-bar></app-search-bar>
-    </div>
+  <div class="p-1">
+    <button mat-raised-button type="button" (click)="logOut()">
+      Log out <mat-icon>exit_to_app</mat-icon>
+    </button>
   </div>
+
+  <div class="p-1">
+    <button mat-raised-button routerLink="/dashboard" type="button">
+      Profile <mat-icon> person_pin</mat-icon>
+    </button>
+  </div>
+
+  <div class="p-1">
+    <button mat-raised-button routerLink="/browse" type="button">
+      Characters <mat-icon>people</mat-icon>
+    </button>
+  </div>
+
+  <div class="container">
+    <app-search-bar></app-search-bar>
+  </div>
+</div>
 
 <!-- top nav -->
 <mat-toolbar>
@@ -35,28 +39,25 @@
     <div class="column-reverse p-2">
       <div class="p-1">
         <a class="nav-link" (click)="logOut()">
-          Log Out
+          <mat-icon>exit_to_app</mat-icon> Log Out
         </a>
-        <hr>
+        <hr />
       </div>
 
       <div class="p-1">
         <a class="nav-link" routerLink="/dashboard">
-          Profile
+          <mat-icon> person_pin</mat-icon> Profile
         </a>
-        <hr>
+        <hr />
       </div>
 
       <div class="p-1">
         <a class="nav-link" routerLink="/browse">
-          Browse
+          <mat-icon>people</mat-icon> Characters
         </a>
-        <hr>
+        <hr />
       </div>
     </div>
   </mat-sidenav>
-  <mat-sidenav-content class="sidenavCont">
-    <!-- <p>dsdsdddddddddddddddddddddddddddddddddds</p> -->
-  </mat-sidenav-content>
+  <mat-sidenav-content class="sidenavCont"> </mat-sidenav-content>
 </mat-sidenav-container>
-  

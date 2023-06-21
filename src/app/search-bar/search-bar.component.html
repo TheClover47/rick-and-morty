@@ -1,8 +1,18 @@
 <div class="container searchBarDiv">
-  <form [formGroup]="searchForm" (ngSubmit)="onSearchSubmit()" class="searchBar">
-      <mat-form-field>
-        <input matInput class="searchBarInput" type="text" placeholder="Search..." formControlName="searchValue">
-      </mat-form-field>
-    </form>
+  <form
+    [formGroup]="searchForm"
+    (ngSubmit)="onSearchSubmit()"
+    class="searchBar"
+  >
+    <mat-form-field>
+      <input
+        matInput
+        class="searchBarInput"
+        type="text"
+        placeholder="Search..."
+        formControlName="searchValue"
+      />
+      <mat-icon matSuffix (click)="onSearchSubmit()">search</mat-icon>
+    </mat-form-field>
+  </form>
 </div>
-  
