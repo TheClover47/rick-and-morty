@@ -1,0 +1,39 @@
+<div class="container p-2">
+    <button mat-button class="" (click)="sidenav.toggle()">Filters</button>
+    </div>
+    <mat-sidenav-container class="navbar">
+        <mat-sidenav #sidenav mode="side">
+            <mat-nav-list>
+                <form>
+                    <hr>
+                    <mat-radio-group class="select">
+                        <h1>Gender</h1>
+                        <mat-radio-button>Female</mat-radio-button>
+                        <mat-radio-button>Male</mat-radio-button>
+                        <mat-radio-button>Genrderless</mat-radio-button>
+                        <mat-radio-button>Unknown</mat-radio-button>
+                    </mat-radio-group>
+                    <hr>
+                    <mat-radio-group class="select">
+                        <h1>Species</h1>
+                        <mat-radio-button>Human</mat-radio-button>
+                        <mat-radio-button>???</mat-radio-button>
+                        <mat-radio-button>???</mat-radio-button>
+                        <mat-radio-button>???</mat-radio-button>
+                    </mat-radio-group>
+                    <hr>
+                    <mat-radio-group class="select">
+                        <h1>Status</h1>
+                        <mat-radio-button>Dead</mat-radio-button>
+                        <mat-radio-button>Alive</mat-radio-button>
+                        <mat-radio-button>Unknown</mat-radio-button>
+                    </mat-radio-group>
+                    <hr>
+                </form>
+            </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content class="sidenav">
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+    
+    

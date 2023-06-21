@@ -6,11 +6,11 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { User } from '../models/user';
 
 @Component({
-  selector: 'app-navigation',
-  templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.css'],
+  selector: 'app-top-navigation-bar',
+  templateUrl: './top-navigation-bar.component.html',
+  styleUrls: ['./top-navigation-bar.component.css']
 })
-export class NavigationComponent {
+export class TopNavigationBarComponent {
   isMobile: boolean = false;
   constructor(
     private router: Router,

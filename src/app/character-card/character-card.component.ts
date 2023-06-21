@@ -3,12 +3,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { PopupComponentComponent } from '../popup-component/popup-component.component';
 
 @Component({
-  selector: 'app-profile-popup',
-  templateUrl: './profile-popup.component.html',
-  styleUrls: ['./profile-popup.component.css']
+  selector: 'app-character-card',
+  templateUrl: './character-card.component.html',
+  styleUrls: ['./character-card.component.css']
 })
-export class ProfilePopupComponent {
-
+export class CharacterCardComponent {
   constructor(public dialog:MatDialog){}
 
   @Input() character: any;

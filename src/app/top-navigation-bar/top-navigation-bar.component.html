@@ -1,0 +1,62 @@
+<!-- [ngClass]="isMobile ? 'navigation-mobile' : 'navigation'" -->
+<div class="navigation flex-row-reverse p-2">
+    <div class="p-1">
+      <button mat-raised-button type="button" (click)="logOut()">Log out</button>
+    </div>
+  
+    <div class="p-1">
+      <button mat-raised-button routerLink="/dashboard" type="button">
+        Profile
+      </button>
+    </div>
+  
+    <div class="p-1">
+      <button mat-raised-button routerLink="/browse" type="button">Browse</button>
+    </div>
+  
+    <div class="container">
+      <app-search-bar></app-search-bar>
+    </div>
+  </div>
+
+<!-- top nav -->
+<mat-toolbar>
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
+    <mat-icon *ngIf="sidenav.opened">close</mat-icon>
+  </button>
+  <h2 class="p-2 my-auto text-black">Rick-N-Morty</h2>
+</mat-toolbar>
+
+<!-- sidenav -->
+<mat-sidenav-container class="navbar">
+  <mat-sidenav #sidenav mode="over" autosize>
+    <!-- <app-top-navigation-bar></app-top-navigation-bar> -->
+    <div class="column-reverse p-2">
+      <div class="p-1">
+        <a class="nav-link" (click)="logOut()">
+          Log Out
+        </a>
+        <hr>
+      </div>
+
+      <div class="p-1">
+        <a class="nav-link" routerLink="/dashboard">
+          Profile
+        </a>
+        <hr>
+      </div>
+
+      <div class="p-1">
+        <a class="nav-link" routerLink="/browse">
+          Browse
+        </a>
+        <hr>
+      </div>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content class="sidenavCont">
+    <!-- <p>dsdsdddddddddddddddddddddddddddddddddds</p> -->
+  </mat-sidenav-content>
+</mat-sidenav-container>
+  

@@ -6,11 +6,11 @@ import { AddCharacterAction } from '../store/actions/character.action';
 import { AppState } from '../store/models/state.model';
 
 @Component({
-  selector: 'app-profile-card',
-  templateUrl: './profile-card.component.html',
-  styleUrls: ['./profile-card.component.css'],
+  selector: 'app-characters-list',
+  templateUrl: './characters-list.component.html',
+  styleUrls: ['./characters-list.component.css']
 })
-export class ProfileCardComponent implements OnInit {
+export class CharactersListComponent implements OnInit {
   characters!: Character[];
   character!: Character;
   status: any;

@@ -1,27 +1,6 @@
-.dashboard{
-    height: 88vh;
-}
-
-.mat-toolbar {
-    background-color: #97ce4c;
-    display: none;
-}
-
 mat-card-content{
     display: flex;
     flex-direction: row;
 }
-mat-sidenav-container{
-  
-    height: 100vh;
-}
 
-@media only screen and (max-width: 450px) {
-    .mat-toolbar {
-        background-color: #97ce4c;
-        display: flex;
-    }
-    .mat-sidenav{
-        width: 45%;
-    }
-}
+

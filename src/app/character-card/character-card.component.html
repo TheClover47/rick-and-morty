@@ -1,0 +1,13 @@
+<mat-card>
+    <mat-card-title>{{ character.name }}</mat-card-title>
+    <img alt="profile-image" mat-card-image [src]="character.image" />
+    <mat-card-content>
+      <p>Gender: {{ character.gender }}</p>
+      <p>Status: {{ character.status }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="onOpenDialog()">MORE INFO!</button>
+    </mat-card-actions>
+    <!-- <app-popup-component *ngIf="infoActive" [id]="character.id"></app-popup-component> -->
+  </mat-card>
+  

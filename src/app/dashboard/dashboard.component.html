@@ -1,49 +1,17 @@
-<app-navigation></app-navigation>
-<!-- top nav -->
-<mat-toolbar>
-  <button mat-icon-button (click)="sidenav.toggle()">
-    <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
-    <mat-icon *ngIf="sidenav.opened">close</mat-icon>
-  </button>
-  <h2 class="p-2 my-auto text-black">Rick-N-Morty</h2>
-</mat-toolbar>
+<app-top-navigation-bar></app-top-navigation-bar>
 
-<!-- sidenav -->
-<mat-sidenav-container>
-  <mat-sidenav #sidenav mode="over" autosize>
-    <app-navigation></app-navigation>
-    <div class="navigation column-reverse p-2">
-      <div class="p-1">
-        <button mat-raised-button type="button">Log out</button>
-      </div>
-
-      <div class="p-1">
-        <button mat-raised-button routerLink="/dashboard" type="button">
-          Profile
-        </button>
-      </div>
-
-      <div class="p-1">
-        <button mat-raised-button routerLink="/browse" type="button">
-          Browse
-        </button>
-      </div>
-    </div>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <!-- user data card -->
-    <mat-card>
-      <mat-card-content>
-        <mat-card-title>Welcome {{ user.name }}</mat-card-title>
-        <img
-          mat-card-image
-          src="https://i.pravatar.cc/150?img=63"
-          alt="Image"
-        />
-      </mat-card-content>
-      <mat-card-subtitle *ngIf="user.lastLogin !== 'None'">
-        Last login time: {{ user.lastLogin }}</mat-card-subtitle
-      >
-    </mat-card>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<!-- user data card -->
+<mat-card>
+  <mat-card-content>
+    <mat-card-title>Welcome {{ user.name }}</mat-card-title>
+    <img
+      class="rounded-circle"
+      mat-card-image
+      src="https://i.pravatar.cc/150?img=63"
+      alt="Image"
+    />
+  </mat-card-content>
+  <mat-card-subtitle *ngIf="user.lastLogin !== 'None'">
+    Last login time: {{ user.lastLogin }}</mat-card-subtitle
+  >
+</mat-card>
