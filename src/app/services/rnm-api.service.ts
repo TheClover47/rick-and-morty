@@ -1,16 +1,46 @@
-import { HttpClient } from '@angular/common/http';
+import { Apollo } from 'apollo-angular';
+import { gql } from 'apollo-angular';
 import { Injectable } from '@angular/core';
 import { ApiData } from '../models/apiData';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class RnmApiService {
+  constructor(private apollo: Apollo) {}
 
-  constructor(private http: HttpClient) { }
+  getCharacters() {
+    const query = gql`
+      query GetCharacters {
+        characters {
+          info {
+            count
+            pages
+            next
+            prev
+          }
+          results {
+            id
+            name
+            status
+            species
+            type
+            gender
+            origin {
+              name
+            }
+            location {
+              name
+            }
+            image
+            created
+          }
+        }
+      }
+    `;
 
-  getCharactersData(){
-    let url="https://rickandmortyapi.com/api/character";
-    return this.http.get<ApiData>(url);
+    return this.apollo.query({
+      query,
+    });
   }
 }

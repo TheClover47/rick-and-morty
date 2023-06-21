@@ -1,6 +1,7 @@
 .navigation {
     background-color: #97ce4c;
     display: flex;
+    flex-direction:row-reverse;
 }
 .mat-toolbar {
     background-color: #97ce4c;
@@ -12,9 +13,10 @@
     height: 88vh;
 }
 
-@media only screen and (max-width: 427px) {
+
+@media only screen and (max-width: 450px) {
+   
     .navigation {
         display: none;
     }
-    
 }

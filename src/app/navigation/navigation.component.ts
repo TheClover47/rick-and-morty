@@ -1,35 +1,71 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+
 import { User } from '../models/user';
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
-  styleUrls: ['./navigation.component.css']
+  styleUrls: ['./navigation.component.css'],
 })
 export class NavigationComponent {
-  constructor(private router: Router, private _snackBar: MatSnackBar){}
+  isMobile: boolean = false;
+  constructor(
+    private router: Router,
+    private _snackBar: MatSnackBar,
+    private breakpointObserver: BreakpointObserver
+  ) {}
 
-  users: any[] = JSON.parse(localStorage.getItem('users') || "");
+  users: any[] = JSON.parse(localStorage.getItem('users') || '');
   user: any[] = [];
   currUser: any = JSON.parse(localStorage.getItem('currentUser') || '');
 
+  // ngOnInit() {
+  //   this.breakpointObserver
+  //     .observe([Breakpoints.Handset])
+  //     .subscribe((result) => {
+  //       this.isMobile = result.matches;
+  //     });
+  //   console.log('isMobile', this.isMobile);
+  // }
+  @HostListener('window:resize')
+  onWindowResize() {
+    this.breakpointObserver
+      .observe([Breakpoints.Handset])
+      .subscribe((result) => {
+        this.isMobile = result.matches;
+      });
+    console.log('isMobile', this.isMobile);
+  }
+  // check viewport
+  ngOnInit() {
+    this.breakpointObserver
+      .observe([Breakpoints.Handset])
+      .subscribe((result) => {
+        this.isMobile = result.matches;
+      });
+    console.log('isMobile', this.isMobile);
+  }
+
   openLogOutSnackBar() {
-    this._snackBar.open("You have logged out successfully!", "Alright!", {
-      duration: 10000, verticalPosition: 'top', panelClass: 'snackBar'
+    this._snackBar.open('You have logged out successfully!', 'Alright!', {
+      duration: 10000,
+      verticalPosition: 'top',
+      panelClass: 'snackBar',
     });
   }
 
-  logOut(){
+  logOut() {
     this.router.navigate(['/login']);
     this.openLogOutSnackBar();
-    this.user = this.users.filter(check => {
-      if(check.email === this.currUser.email){
+    this.user = this.users.filter((check) => {
+      if (check.email === this.currUser.email) {
         check.lastLogin = this.currUser.currLogin;
       }
-    })
-    localStorage.setItem('users', JSON.stringify(this.users))
+    });
+    localStorage.setItem('users', JSON.stringify(this.users));
     localStorage.removeItem('currentUser');
   }
 }

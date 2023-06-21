@@ -20,6 +20,7 @@ import { userReducer } from './store/reducers/user.reducer';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './store/reducers';
 import { PopupComponentComponent } from './popup-component/popup-component.component';
+import { GraphQLModule } from './graphql.module';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { PopupComponentComponent } from './popup-component/popup-component.compo
     StoreModule.forRoot(
       reducers
     ),
+    GraphQLModule,
   ],
   exports: [
    
