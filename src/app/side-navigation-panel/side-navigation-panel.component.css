@@ -1,11 +1,29 @@
 .navbar{
-    position: absolute;
-    transform: inherit;
+    position:relative;
     height: 100vh;
-    z-index: 100;
-    /* background-color: #97ce4c; */
-    /* border-radius: 30px; */
-    margin-left: 5px;
+    width: 100%;
+    transform: inherit;
+    background-color: rgba(255, 255, 255, 0)!important;
+    z-index: 50;
+    text-align: left;
+}
+
+
+mat-nav-list{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.side{
+    width: 200px;
+}
+
+md-sidenav,
+md-sidenav.md-locked-open,
+md-sidenav.md-closed.md-locked-open-add-active{
+    min-width: 0!important;
+    width: auto!important;
+    max-width: none!important;
 }
 
 .mat-mdc-radio-button.mat-accent {
@@ -14,31 +32,24 @@
     --mdc-radio-unselected-hover-icon-color: #212121;
     --mdc-radio-unselected-icon-color: rgba(0, 0, 0, 0.54);
     --mdc-radio-unselected-pressed-icon-color: rgba(0, 0, 0, 0.54);
-    --mdc-radio-selected-focus-icon-color: white;
-    --mdc-radio-selected-hover-icon-color: white;
-    --mdc-radio-selected-icon-color: white;
-    --mdc-radio-selected-pressed-icon-color: white;
+    --mdc-radio-selected-focus-icon-color: black;
+    --mdc-radio-selected-hover-icon-color: black;
+    --mdc-radio-selected-icon-color: black;
+    --mdc-radio-selected-pressed-icon-color: black;
     --mat-radio-ripple-color: #000;
-    --mat-radio-checked-ripple-color: white;
+    --mat-radio-checked-ripple-color: black;
     --mat-radio-disabled-label-color: rgba(0, 0, 0, 0.38);
-}
-
-.sidenav{
-    height: 100%;
-}
-
-.select{
-    align-items: center;
-}
-
-mat-sidenav{
-    width: 200px;
-    height: fit-content;
-    /* background: #97ce4c; */
-    color: black;
-    text-align: center;
 }
 
 button{
     background-color: white;
+}
+
+@media only screen and (max-width: 450px) {
+    .navbar{
+        position: absolute;
+    }
+    mat-sidenav{
+        
+    }
 }
