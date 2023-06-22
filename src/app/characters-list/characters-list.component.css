@@ -1,0 +1,11 @@
+.filters{
+    display: flex;
+    float: left ;
+}
+
+@media only screen and (min-width: 450px) {
+   .filters{
+    width: 15%;
+    display: inline-block;
+   }
+}

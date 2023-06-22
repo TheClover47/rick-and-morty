@@ -34,4 +34,7 @@ export class SearchBarComponent implements OnInit {
     this.searchValue = this.searchForm.value.searchValue ?? '';
     this.fetchCharacterData();
   }
+  searchCharacter(){
+    console.log("Searching...");
+  }
 }

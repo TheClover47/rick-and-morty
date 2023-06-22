@@ -1,24 +1,24 @@
 <!-- [ngClass]="isMobile ? 'navigation-mobile' : 'navigation'" -->
 <div class="navigation flex-row-reverse p-2">
-    <div class="p-2 text-center">
+    <div class="navbar-item">
 
       <a class="nav-link" (click)="logOut()">
-        <mat-icon class="mx-auto">logout</mat-icon>
+        <mat-icon class="text-white">logout</mat-icon>
         <p>Log out</p>
       </a>
     </div>
 
-    <div class="p-2 text-center">
+    <div class="navbar-item">
 
       <a class="nav-link" routerLink="/dashboard">
-        <mat-icon class="mx-auto">person</mat-icon>
+        <mat-icon class="text-white">person</mat-icon>
         <p>Profile</p>
       </a>
     </div>
 
-    <div class="p-2 text-center ">
+    <div class="navbar-item">
         <a class="nav-link" routerLink="/browse">
-          <mat-icon>home</mat-icon>
+          <mat-icon class="text-white">home</mat-icon>
           <p>Browse</p>
         </a>
     </div>
