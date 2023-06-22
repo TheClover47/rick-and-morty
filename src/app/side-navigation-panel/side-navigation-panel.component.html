@@ -1,7 +1,7 @@
 <div class="container p-2">
-    <button mat-button class="" (click)="sidenav.toggle()">Filters</button>
+    <button mat-button class="toggle" (click)="sidenav.toggle()">Filters</button>
     <mat-sidenav-container class="navbar">
-        <mat-sidenav #sidenav mode="push">
+        <mat-sidenav #sidenav mode="push" opened="true">
             <mat-nav-list>
                 <form>
                     <hr>

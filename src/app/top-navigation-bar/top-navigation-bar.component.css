@@ -61,7 +61,9 @@ a{
     }
     .mat-sidenav{
         width: 45%;
-        
+    }
+    .nav-link{
+        color: black;
     }
 }
 

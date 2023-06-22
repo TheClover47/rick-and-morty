@@ -8,6 +8,9 @@
     text-align: left;
 }
 
+.toggle{
+    display: none;
+}
 
 mat-nav-list{
     margin-right: 10px;
@@ -49,7 +52,7 @@ button{
     .navbar{
         position: absolute;
     }
-    mat-sidenav{
-        
+    .toggle{
+        display: inline-block;
     }
 }
