@@ -7,12 +7,19 @@ import { ApiData } from '../models/apiData';
   providedIn: 'root',
 })
 export class RnmApiService {
+  searchValue = "";
+
   constructor(private apollo: Apollo) {}
 
+  setSearchValue(value: string){
+    this.searchValue = value;
+  }
+
   getCharacters() {
+    console.log("Search: ",this.searchValue)
     const query = gql`
       query GetCharacters {
-        characters {
+        characters(filter: {name: "${this.searchValue}"}) {
           info {
             count
             pages

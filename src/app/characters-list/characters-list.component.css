@@ -9,4 +9,7 @@
     width: 20%;
     display: inline-block;
    }
+   .card-list{
+    float: left;
+   }
 }

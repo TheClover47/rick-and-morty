@@ -1,11 +1,8 @@
 <div class="container p-2">
     <div>
-        <button mat-button class="toggle" (click)="sidenav.toggle()">Filters</button>
+        <button mat-button class="toggle" (click)="showSidenav()">Filters</button>
     </div>
-    <div class="sidebar">
-        <mat-sidenav-container class="navbar">
-            <mat-sidenav #sidenav mode="push" opened="true">
-                <mat-nav-list>
+    <div [class.visible]="visible" class="sidebar">
                     <form>
                         <hr>
                         <mat-radio-group class="select">
@@ -51,11 +48,6 @@
                         </mat-radio-group>
                         <hr>
                     </form>
-                </mat-nav-list>
-            </mat-sidenav>
-            <mat-sidenav-content class="content">
-            </mat-sidenav-content>
-        </mat-sidenav-container>
     </div>
 </div>
     

@@ -6,6 +6,7 @@ const initialState: Array<Character> = [];
     state: Array<Character> = initialState,
     action: any,
   ) {
+    // console.log(state)
     switch (action.type) {
       case CharacterActionType.ADD_ITEM:
         return [...state, action.payload];

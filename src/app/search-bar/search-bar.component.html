@@ -2,8 +2,8 @@
   <div>
     <form [formGroup]="searchForm" (ngSubmit)="onSearchSubmit()">
         <div class="container searchBar">
-          <input matInput class="d-inlineblock searchInput" type="text" placeholder="Search..." formControlName="searchValue">
-            <mat-icon class="d-inlineblock searchIcon" (click)="searchCharacter()">search</mat-icon>
+          <input matInput class="searchInput" type="text" placeholder="Search..." formControlName="searchValue">
+            <mat-icon class="searchIcon" (click)="searchCharacter()">search</mat-icon>
         </div>
       </form>
   </div>

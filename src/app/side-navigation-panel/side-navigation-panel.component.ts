@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class SideNavigationPanelComponent {
 
+  visible = false;
+
+  showSidenav(){
+    if(this.visible) this.visible = false;
+    else this.visible = true;
+  }
 }

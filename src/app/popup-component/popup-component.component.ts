@@ -22,7 +22,9 @@ export class PopupComponentComponent {
     this.store.select(state => state).subscribe(data => {
       this.characterItems = data.characters.map(data => {return data});
       this.characterItems = this.characterItems.filter(character=>{return character.id == this.data.id})
+      console.log("this is the store: ",data);
     });
+    
   }
 
   onNoClick(): void {
