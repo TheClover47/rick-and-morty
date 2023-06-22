@@ -20,10 +20,8 @@ export class CharactersListComponent implements OnInit {
   ngOnInit() {
     this.rnm.getCharacters().subscribe((data: any) => {
       this.characters = data.data.characters.results;
-      console.log(this.characters);
       for (this.character of this.characters)
         this.store.dispatch(new AddCharacterAction(this.character));
     });
-    
   }
 }

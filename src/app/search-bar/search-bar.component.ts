@@ -20,9 +20,7 @@ import { Router } from '@angular/router';
 export class SearchBarComponent implements OnInit {
   constructor(private fb: FormBuilder, private rnm: RnmApiService, private store: Store<AppState>, private router: Router) {}
 
-  ngOnInit() {
-    this.fetchCharacterData();
-  }
+  ngOnInit() {}
 
   characters!: Character[];
   character!: Character;
@@ -42,9 +40,8 @@ export class SearchBarComponent implements OnInit {
   }
   searchCharacter(){
     this.searchValue = this.searchForm.value.searchValue ?? '';
-    console.log("Searching...");
-    console.log("Here: ",this.searchValue);
-    this.fetchCharacterData();
+    console.log("Search Icon: ",this.searchValue);
+    // this.fetchCharacterData();
     this.router.navigate(['browse']);
   }
 }
