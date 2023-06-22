@@ -3,9 +3,14 @@
     height: 100vh;
     width: 100%;
     transform: inherit;
-    background-color: rgba(255, 255, 255, 0)!important;
+    background-color: rgba(255, 255, 255, 0.5)!important;
+    display: flex;
     z-index: 50;
     text-align: left;
+}
+
+mat-sidenav{
+    position: absolute;
 }
 
 .toggle{
@@ -50,7 +55,14 @@ button{
 
 @media only screen and (max-width: 450px) {
     .navbar{
+        position: relative;
+        display: contents;
+        margin-top: 100px;
+    }
+
+    .sidebar{
         position: absolute;
+        height: 100%;
     }
     .toggle{
         display: inline-block;

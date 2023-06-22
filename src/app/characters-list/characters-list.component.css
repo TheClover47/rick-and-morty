@@ -4,6 +4,7 @@
 
 @media only screen and (min-width: 450px) {
    .filters{
+    z-index: 50;
     float: left;
     width: 20%;
     display: inline-block;
