@@ -4,6 +4,7 @@ import { Character } from '../models/character';
 import { Store } from '@ngrx/store';
 import { AddCharacterAction } from '../store/actions/character.action';
 import { AppState } from '../store/models/state.model';
+import { subscribe } from 'graphql';
 
 @Component({
   selector: 'app-characters-list',
@@ -18,12 +19,15 @@ export class CharactersListComponent implements OnInit {
   constructor(private rnm: RnmApiService, private store: Store<AppState>) {}
 
   ngOnInit() {
-    this.rnm.getCharacters().subscribe((data: any) => {
-      this.characters = data.data.characters.results;
-      console.log(this.characters);
-      for (this.character of this.characters)
-        this.store.dispatch(new AddCharacterAction(this.character));
-    });
+    this.rnm.getQueryChange.subscribe(nodata =>{
+      this.rnm.getCharacters().subscribe((data: any) => {
+        this.characters = data.data.characters.results;
+        for (this.character of this.characters)
+          this.store.dispatch(new AddCharacterAction(this.character));
+      });
+      }
+    )
+    
     
   }
 }

@@ -31,6 +31,7 @@ export class SearchBarComponent implements OnInit {
 
   fetchCharacterData() {
     this.rnm.setSearchValue(this.searchValue);
+    this.rnm.querySatus.next(!this.rnm.querySatus);
     this.rnm.getCharacters();
   }
 
