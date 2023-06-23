@@ -20,7 +20,7 @@ export class CharactersListComponent implements OnInit {
 
   ngOnInit() {
     this.rnm.getQueryChange.subscribe(nodata =>{
-      this.rnm.getCharacters().subscribe((data: any) => {
+      this.rnm.getCharacters().forEach((data: any) => {
         this.characters = data.data.characters.results;
         for (this.character of this.characters)
           this.store.dispatch(new AddCharacterAction(this.character));
