@@ -1,28 +1,31 @@
+<!-- [ngClass]="isMobile ? 'navigation-mobile' : 'navigation'" -->
 <div class="navigation flex-row-reverse p-2">
-  <div class="navbar-item">
-    <a class="nav-link" (click)="logOut()">
-      <mat-icon class="text-white">logout</mat-icon>
-      <p>Log out</p>
-    </a>
-  </div>
+    <div class="navbar-item">
 
-  <div class="navbar-item">
-    <a class="nav-link" routerLink="/dashboard">
-      <mat-icon class="text-white">person</mat-icon>
-      <p>Profile</p>
-    </a>
-  </div>
+      <a class="nav-link" (click)="logOut()">
+        <mat-icon class="text-white">logout</mat-icon>
+        <p>Log out</p>
+      </a>
+    </div>
 
-  <div class="navbar-item">
-    <a class="nav-link" routerLink="/browse">
-      <mat-icon class="text-white">home</mat-icon>
-      <p>Browse</p>
-    </a>
+    <div class="navbar-item">
+
+      <a class="nav-link" routerLink="/dashboard">
+        <mat-icon class="text-white">person</mat-icon>
+        <p>Profile</p>
+      </a>
+    </div>
+
+    <div class="navbar-item">
+        <a class="nav-link" routerLink="/browse">
+          <mat-icon class="text-white">home</mat-icon>
+          <p>Browse</p>
+        </a>
+    </div>
+    <div class="mx-auto">
+      <app-search-bar></app-search-bar>
+    </div>
   </div>
-  <div class="mx-auto">
-    <app-search-bar></app-search-bar>
-  </div>
-</div>
 
 <!-- top nav -->
 <mat-toolbar class="sticky-top">
@@ -30,31 +33,32 @@
     <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
     <mat-icon *ngIf="sidenav.opened">close</mat-icon>
   </button>
-  <app-search-bar></app-search-bar>
+  <app-search-bar *ngIf="router.url === '/browse'"></app-search-bar>
 </mat-toolbar>
 
 <!-- sidenav -->
 <div class="sidebar">
   <mat-sidenav-container class="navbar">
     <mat-sidenav #sidenav mode="over" autosize>
+      <!-- <app-top-navigation-bar></app-top-navigation-bar> -->
       <div class="column-reverse p-2">
         <div class="p-1">
           <a class="nav-link" (click)="logOut()">
-            <mat-icon>exit_to_app</mat-icon> Log Out
+            <mat-icon>logout</mat-icon> Log Out
           </a>
           <hr />
         </div>
 
         <div class="p-1">
           <a class="nav-link" routerLink="/dashboard">
-            <mat-icon> person_pin</mat-icon> Profile
+            <mat-icon>person</mat-icon> Profile
           </a>
           <hr />
         </div>
 
         <div class="p-1">
           <a class="nav-link" routerLink="/browse">
-            <mat-icon>people</mat-icon> Characters
+            <mat-icon>home</mat-icon> Characters
           </a>
           <hr />
         </div>

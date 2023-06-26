@@ -11,7 +11,7 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 export class TopNavigationBarComponent {
   isMobile: boolean = false;
   constructor(
-    private router: Router,
+    public router: Router,
     private _snackBar: MatSnackBar,
     private breakpointObserver: BreakpointObserver
   ) {}

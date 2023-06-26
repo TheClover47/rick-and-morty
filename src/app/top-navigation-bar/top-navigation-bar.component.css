@@ -63,6 +63,11 @@ a{
     .sidebar{
         display: inline-block;
     }
+
+    .sidenavCont{
+        z-index: 100;
+        display: none;
+    }
    
     .navigation {
         display: none;
@@ -73,6 +78,7 @@ a{
     }
     .mat-sidenav{
         width: 45%;
+        z-index: 100;
     }
     .nav-link{
         color: black;
