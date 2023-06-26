@@ -5,45 +5,45 @@
     <div [class.visible]="visible" class="sidebar">
         <form>
             <hr>
-            <mat-radio-group class="select">
+            <mat-radio-group name="gender" [(ngModel)]="gender" (change)="onGender()" class="select">
                 <h1>Gender</h1>
                 <div>
-                    <mat-radio-button>Female</mat-radio-button>
+                    <mat-radio-button value="female">Female</mat-radio-button>
                 </div>
                 <div>
-                    <mat-radio-button>Male</mat-radio-button>
+                    <mat-radio-button value="male">Male</mat-radio-button>
                 </div>
                 <div>
-                    <mat-radio-button>Genrderless</mat-radio-button>
+                    <mat-radio-button value="genderless">Genrderless</mat-radio-button>
                 </div>
                 <div>
-                    <mat-radio-button>Unknown</mat-radio-button>
+                    <mat-radio-button value="unknown">Unknown</mat-radio-button>
                 </div>
             </mat-radio-group>
             <hr>
-            <mat-radio-group class="select">
+            <mat-radio-group name="species" [(ngModel)]="species" (change)="onSpecies()" class="select">
                 <h1>Species</h1>
                 <div>
-                    <mat-radio-button>Alien</mat-radio-button>
+                    <mat-radio-button value="alien">Alien</mat-radio-button>
                 </div>
                 <div>
-                    <mat-radio-button>Human</mat-radio-button>
+                    <mat-radio-button value="human">Human</mat-radio-button>
                 </div>
                 <div>
-                    <mat-radio-button>Humanoid</mat-radio-button>
+                    <mat-radio-button value="humanoid">Humanoid</mat-radio-button>
                 </div>
             </mat-radio-group>
             <hr>
-            <mat-radio-group class="select">
+            <mat-radio-group name="status" [(ngModel)]="status" (change)="onStatus()" class="select">
                 <h1>Status</h1>
                 <div>
-                    <mat-radio-button>Dead</mat-radio-button>
+                    <mat-radio-button value="dead">Dead</mat-radio-button>
                 </div>
                 <div>
-                    <mat-radio-button>Alive</mat-radio-button>
+                    <mat-radio-button value="alive">Alive</mat-radio-button>
                 </div>
                 <div>
-                    <mat-radio-button>Unknown</mat-radio-button>
+                    <mat-radio-button value="unknown">Unknown</mat-radio-button>
                 </div>
             </mat-radio-group>
             <hr>
