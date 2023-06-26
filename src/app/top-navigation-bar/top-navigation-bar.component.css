@@ -25,6 +25,7 @@ mat-sidenav-container{
 }
 
 .sidebar{
+    display: none;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -54,10 +55,15 @@ mat-sidenav-container{
 }
 a{
     cursor: pointer;
+    white-space: nowrap;
 }
 
 
 @media only screen and (max-width: 450px) {
+
+    .sidebar{
+        display: inline-block;
+    }
    
     .navigation {
         display: none;

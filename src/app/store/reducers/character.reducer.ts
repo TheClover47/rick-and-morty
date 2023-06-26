@@ -9,7 +9,14 @@ const initialState: Array<Character> = [];
     // console.log(state)
     switch (action.type) {
       case CharacterActionType.ADD_ITEM:
-        return [...state, action.payload];
+        const user = state.filter(character=> character.id == action.payload.id)
+        if(user.length){
+          return  [...state, ]
+        }
+        else{
+          return [...state, action.payload]
+        }
+        /* return [...state, action.payload]; */
       case CharacterActionType.REMOVE_ITEM:
         return state.filter(character => {return character == action.payload})
       default:
