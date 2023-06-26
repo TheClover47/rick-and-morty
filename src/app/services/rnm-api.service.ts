@@ -12,6 +12,7 @@ export class RnmApiService {
   statusValue = "";
   speciesValue = "";
   genderValue = "";
+  page = 1;
   querySatus = new BehaviorSubject<boolean>(false);
 
   constructor(private apollo: Apollo) {}
@@ -28,7 +29,7 @@ export class RnmApiService {
     console.log("Search: ",this.searchValue)
     const query = gql`
       query GetCharacters {
-        characters(filter: {name: "${this.searchValue}", status:"${this.statusValue}", species:"${this.speciesValue}", gender:"${this.genderValue}"}) {
+        characters(page: ${this.page}, filter: {name: "${this.searchValue}", status:"${this.statusValue}", species:"${this.speciesValue}", gender:"${this.genderValue}"}) {
           info {
             count
             pages

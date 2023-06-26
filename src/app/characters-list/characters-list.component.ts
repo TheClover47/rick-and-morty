@@ -16,6 +16,8 @@ export class CharactersListComponent implements OnInit {
   character!: Character;
   status: any;
 
+  page = this.rnm.page;
+
   constructor(private rnm: RnmApiService, private store: Store<AppState>) {}
 
   ngOnInit() {
