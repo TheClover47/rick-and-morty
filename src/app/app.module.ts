@@ -21,6 +21,7 @@ import { GraphQLModule } from './graphql.module';
 import { TopNavigationBarComponent } from './top-navigation-bar/top-navigation-bar.component';
 import { CharactersListComponent } from './characters-list/characters-list.component';
 import { CharacterCardComponent } from './character-card/character-card.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { CharacterCardComponent } from './character-card/character-card.componen
       reducers
     ),
     GraphQLModule,
+    NgxPaginationModule
   ],
   exports: [
    
