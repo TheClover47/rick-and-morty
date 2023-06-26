@@ -9,19 +9,17 @@ import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { CustomMaterialModule } from '../app/materialmodule/materialmodule.module';
-import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SideNavigationPanelComponent } from './side-navigation-panel/side-navigation-panel.component';
-import { userReducer } from './store/reducers/user.reducer';
-import { StoreModule } from '@ngrx/store';
 import { reducers } from './store/reducers';
 import { PopupComponentComponent } from './popup-component/popup-component.component';
 import { GraphQLModule } from './graphql.module';
 import { TopNavigationBarComponent } from './top-navigation-bar/top-navigation-bar.component';
 import { CharactersListComponent } from './characters-list/characters-list.component';
 import { CharacterCardComponent } from './character-card/character-card.component';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -35,8 +33,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     SearchBarComponent,
     routingComponents,
     SideNavigationPanelComponent,
-    PopupComponentComponent
-
+    PopupComponentComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,16 +43,22 @@ import {NgxPaginationModule} from 'ngx-pagination';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    StoreModule.forRoot(
-      reducers
-    ),
+    StoreModule.forRoot(reducers),
     GraphQLModule,
-    NgxPaginationModule
+    NgxPaginationModule,
   ],
   exports: [
-   
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    CustomMaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    GraphQLModule,
+    NgxPaginationModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

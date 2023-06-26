@@ -8,30 +8,36 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class RnmApiService {
-  searchValue = "";
-  statusValue = "";
-  speciesValue = "";
-  genderValue = "";
+  searchValue = '';
+  statusValue = '';
+  speciesValue = '';
+  genderValue = '';
   currPage = 1;
   filterChange: boolean = false;
   querySatus = new BehaviorSubject<boolean>(false);
 
   constructor(private apollo: Apollo) {}
 
-  setSearchValue(value: string){
+  setSearchValue(value: string) {
     this.searchValue = value;
   }
 
-  get getQueryChange(){
+  get getQueryChange() {
     return this.querySatus.asObservable();
   }
 
   getCharacters() {
-    if(this.filterChange){this.currPage = 1}
-    console.log("Search: ",this.searchValue)
+    if (this.filterChange) {
+      this.currPage = 1;
+    }
+    console.log('Search: ', this.searchValue);
     const query = gql`
       query GetCharacters {
-        characters(page: ${this.currPage}, filter: {name: "${this.searchValue}", status:"${this.statusValue}", species:"${this.speciesValue}", gender:"${this.genderValue}"}) {
+        characters(page: ${this.currPage}, 
+          filter: {name: "${this.searchValue}", 
+          status:"${this.statusValue}", 
+          species:"${this.speciesValue}",
+           gender:"${this.genderValue}"}) {
           info {
             count
             pages

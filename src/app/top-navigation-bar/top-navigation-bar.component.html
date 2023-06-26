@@ -1,31 +1,28 @@
-<!-- [ngClass]="isMobile ? 'navigation-mobile' : 'navigation'" -->
 <div class="navigation flex-row-reverse p-2">
-    <div class="navbar-item">
-
-      <a class="nav-link" (click)="logOut()">
-        <mat-icon class="text-white">logout</mat-icon>
-        <p>Log out</p>
-      </a>
-    </div>
-
-    <div class="navbar-item">
-
-      <a class="nav-link" routerLink="/dashboard">
-        <mat-icon class="text-white">person</mat-icon>
-        <p>Profile</p>
-      </a>
-    </div>
-
-    <div class="navbar-item">
-        <a class="nav-link" routerLink="/browse">
-          <mat-icon class="text-white">home</mat-icon>
-          <p>Browse</p>
-        </a>
-    </div>
-    <div class="mx-auto">
-      <app-search-bar></app-search-bar>
-    </div>
+  <div class="navbar-item">
+    <a class="nav-link" (click)="logOut()">
+      <mat-icon class="text-white">logout</mat-icon>
+      <p>Log out</p>
+    </a>
   </div>
+
+  <div class="navbar-item">
+    <a class="nav-link" routerLink="/dashboard">
+      <mat-icon class="text-white">person</mat-icon>
+      <p>Profile</p>
+    </a>
+  </div>
+
+  <div class="navbar-item">
+    <a class="nav-link" routerLink="/browse">
+      <mat-icon class="text-white">home</mat-icon>
+      <p>Browse</p>
+    </a>
+  </div>
+  <div class="mx-auto">
+    <app-search-bar></app-search-bar>
+  </div>
+</div>
 
 <!-- top nav -->
 <mat-toolbar class="sticky-top">
@@ -40,7 +37,6 @@
 <div class="sidebar">
   <mat-sidenav-container class="navbar">
     <mat-sidenav #sidenav mode="over" autosize>
-      <!-- <app-top-navigation-bar></app-top-navigation-bar> -->
       <div class="column-reverse p-2">
         <div class="p-1">
           <a class="nav-link" (click)="logOut()">
