@@ -23,7 +23,7 @@
         </a>
     </div>
     <div class="mx-auto">
-      <app-search-bar></app-search-bar>
+      <app-search-bar *ngIf="router.url === '/browse'"></app-search-bar>
     </div>
   </div>
 
