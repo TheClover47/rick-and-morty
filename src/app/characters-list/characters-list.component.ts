@@ -15,21 +15,30 @@ export class CharactersListComponent implements OnInit {
   characters!: Character[];
   character!: Character;
   status: any;
+  charCount: number = 0;
+  p: number = 1;
 
-  page = this.rnm.page;
-
-  constructor(private rnm: RnmApiService, private store: Store<AppState>) {}
+  constructor(private rnm: RnmApiService, private store: Store<AppState>) {
+    this.rnm.currPage = 1;
+  }
 
   ngOnInit() {
     this.rnm.getQueryChange.subscribe(nodata =>{
       this.rnm.getCharacters().forEach((data: any) => {
+        if(this.rnm.filterChange == true){this.p = 1}
         this.characters = data.data.characters.results;
-        for (this.character of this.characters)
+        for (this.character of this.characters){
           this.store.dispatch(new AddCharacterAction(this.character));
+        }
+          this.charCount = data.data.characters.info.count;
       });
       }
     )
-    
-    
+  }
+  getPage(page: number){
+    this.rnm.filterChange = false;
+    this.p = page;
+    this.rnm.currPage = page;
+    this.rnm.querySatus.next(!this.rnm.querySatus)
   }
 }

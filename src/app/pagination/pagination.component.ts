@@ -24,14 +24,14 @@ export class PaginationComponent {
     this.pageEvent = e;
     this.length = e.length;
     this.pageSize = e.pageSize;
-    this.rnm.page = 1+e.pageIndex;
+    this.rnm.currPage = 1+e.pageIndex;
     this.rnm.querySatus.next(!this.rnm.querySatus);
   }
 
   
 
   nextPage(){
-    this.rnm.page = this.pageIndex;
+    // this.rnm.page = this.pageIndex;
   }
   prevPage(){}
   firstPage(){}

@@ -21,16 +21,19 @@ export class SideNavigationPanelComponent {
 
   onStatus(){
     this.rnm.statusValue = this.status;
+    this.rnm.filterChange = true;
     this.rnm.querySatus.next(!this.rnm.querySatus);
   }
 
   onSpecies(){
     this.rnm.speciesValue = this.species;
+    this.rnm.filterChange = true;
     this.rnm.querySatus.next(!this.rnm.querySatus);
   }
 
   onGender(){
     this.rnm.genderValue = this.gender;
+    this.rnm.filterChange = true;
     this.rnm.querySatus.next(!this.rnm.querySatus);
   }
 
