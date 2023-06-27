@@ -1,49 +1,50 @@
-.picture{
-    background-color: #97ce4c;
+.picture {
+  background-color: #97ce4c;
 }
 
-.grid{
-    display: grid;
-    align-items: center;
-    grid-template-columns: 1fr 1.5fr;
+.grid {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1.5fr;
 }
 
-.register{
-    background: url('https://media0.giphy.com/media/i2tLw5ZyikSFdkeGHT/giphy.gif?cid=ecf05e47kgzjeomhjk5af66yj4dam9ox8ypr0qc4lnsfbbr2&ep=v1_gifs_related&rid=giphy.gif&ct=s');
-    background-position: center;
-    background-repeat: no-repeat;
+.register {
+  background: url("https://media0.giphy.com/media/i2tLw5ZyikSFdkeGHT/giphy.gif?cid=ecf05e47kgzjeomhjk5af66yj4dam9ox8ypr0qc4lnsfbbr2&ep=v1_gifs_related&rid=giphy.gif&ct=s");
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.loginBut{
-    color:#97ce4c;
+.loginBut {
+  color: #97ce4c;
 }
 
 img {
-    width: 80%;
-    height: auto;
-    display: block;
-    margin: auto;
-    top: 50%;
+  width: 80%;
+  height: auto;
+  display: block;
+  margin: auto;
+  top: 50%;
 }
 
-.image{
-    display: flex;
-    justify-content: center;
+.image {
+  display: flex;
+  justify-content: center;
 }
 .stroke {
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
-@media screen and (max-width: 500px){
-    .grid{
-        display: absolute;
-        align-items: center;
-        grid-template-columns: 1fr;
-    }
+@media screen and (max-width: 500px) {
+  .grid {
+    display: absolute;
+    align-items: center;
+    grid-template-columns: 1fr;
+  }
 }
 
 @media only screen and (max-width: 426px) {
-    .picture{
-        display: none;
-    }
+  .picture {
+    display: none;
+  }
 }

@@ -33,7 +33,7 @@
     <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
     <mat-icon *ngIf="sidenav.opened">close</mat-icon>
   </button>
-  <app-search-bar></app-search-bar>
+  <app-search-bar *ngIf="router.url === '/browse'"></app-search-bar>
 </mat-toolbar>
 
 <!-- sidenav -->
@@ -44,21 +44,21 @@
       <div class="column-reverse p-2">
         <div class="p-1">
           <a class="nav-link" (click)="logOut()">
-            <mat-icon>exit_to_app</mat-icon> Log Out
+            <mat-icon>logout</mat-icon> Log Out
           </a>
           <hr />
         </div>
 
         <div class="p-1">
           <a class="nav-link" routerLink="/dashboard">
-            <mat-icon> person_pin</mat-icon> Profile
+            <mat-icon>person</mat-icon> Profile
           </a>
           <hr />
         </div>
 
         <div class="p-1">
           <a class="nav-link" routerLink="/browse">
-            <mat-icon>people</mat-icon> Characters
+            <mat-icon>home</mat-icon> Characters
           </a>
           <hr />
         </div>

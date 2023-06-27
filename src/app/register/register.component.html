@@ -1,57 +1,74 @@
 <div class="container-fluid h-100">
-    <div class="row h-100 grid">
-        <div class="mx-auto my-auto text-center">
-            <h1>Create an account!</h1>
-            <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="">
-                <div>
-                    <mat-form-field>
-                        <mat-label>Name</mat-label>
-                        <input matInput formControlName="name" type="text">
-                        <div *ngIf="name.invalid && name.touched">
-                            <small *ngIf="name.errors?.['required']" 
-                            class="text-danger">Name is required!</small>
-                        </div>
-
-                    </mat-form-field>
-                </div>
-                <div>
-                    <mat-form-field>
-                        <mat-label>E-Mail</mat-label>
-                        <input matInput formControlName="email" type="email">
-                        <div *ngIf="email.invalid && email.touched">
-                            <small *ngIf="email.errors?.['required']" 
-                            class="text-danger">E-Mail is required!</small>
-                            <small *ngIf="email.errors?.['pattern']" 
-                            class="text-danger">Please enter a valid E-Mail adress!</small>
-                            <small *ngIf="email.errors?.['emailExists']" 
-                            class="text-danger">This email adress exists!</small>
-                        </div>
-                    </mat-form-field>
-                </div>
-                <div>
-                    <mat-form-field>
-                        <mat-label>Password</mat-label>
-                        <input matInput formControlName="password" type="password">
-                        <div *ngIf="password.invalid && password.touched">
-                            <small *ngIf="password.errors?.['required']" 
-                            class="text-danger">Password is required!</small>
-                            <small *ngIf="password.errors?.['pattern']" 
-                            class="text-danger">Please enter a valid password! Atleast 8 characters, with letters, numbers, special characters!</small>
-                        </div>
-                    </mat-form-field>
-                </div>
-                <div>
-                    <button mat-button class="register" type="submit" [disabled]="registrationForm.invalid"
-                    [class.stroke]="registrationForm.valid" [class.text-white]="registrationForm.valid"> Create!</button>
-                    <!-- <button mat-raised-button class="m-2" (click)="openRegSnackBar()" type="button"> Test</button> -->
-                </div>
-            </form>
-            <a routerLink="/login" class="loginBut">Already have an account?</a>
-        </div>
-        <div class="picture image h-100">
-            <div class="image">
-                <img src="https://s1.thcdn.com/design-assets/images/licensed-images/rickandmorty.png" alt="">
+  <div class="row h-100 grid">
+    <div class="mx-auto my-auto text-center">
+      <h1>Create an account!</h1>
+      <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="">
+        <div>
+          <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" type="text" />
+            <div *ngIf="name.invalid && name.touched">
+              <small *ngIf="name.errors?.['required']" class="text-danger"
+                >Name is required!</small
+              >
             </div>
+          </mat-form-field>
         </div>
+        <div>
+          <mat-form-field>
+            <mat-label>E-Mail</mat-label>
+            <input matInput formControlName="email" type="email" />
+            <div *ngIf="email.invalid && email.touched">
+              <small *ngIf="email.errors?.['required']" class="text-danger"
+                >E-Mail is required!</small
+              >
+              <small *ngIf="email.errors?.['pattern']" class="text-danger"
+                >Please enter a valid E-Mail adress!</small
+              >
+              <small *ngIf="email.errors?.['emailExists']" class="text-danger"
+                >This email adress exists!</small
+              >
+            </div>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input matInput formControlName="password" type="password" />
+            <div *ngIf="password.invalid && password.touched">
+              <small *ngIf="password.errors?.['required']" class="text-danger"
+                >Password is required!</small
+              >
+              <small *ngIf="password.errors?.['pattern']" class="text-danger"
+                >Please enter a valid password! Atleast 8 characters, with
+                letters, numbers, special characters!</small
+              >
+            </div>
+          </mat-form-field>
+        </div>
+        <div>
+          <button
+            mat-button
+            class="register"
+            type="submit"
+            [disabled]="registrationForm.invalid"
+            [class.stroke]="registrationForm.valid"
+            [class.text-white]="registrationForm.valid"
+          >
+            Create!
+          </button>
+          <!-- <button mat-raised-button class="m-2" (click)="openRegSnackBar()" type="button"> Test</button> -->
+        </div>
+      </form>
+      <a routerLink="/login" class="loginBut">Already have an account?</a>
     </div>
+    <div class="picture image h-100">
+      <div class="image">
+        <img
+          src="https://s1.thcdn.com/design-assets/images/licensed-images/rickandmorty.png"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
 </div>

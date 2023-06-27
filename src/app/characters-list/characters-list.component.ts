@@ -18,6 +18,8 @@ export class CharactersListComponent implements OnInit {
   charCount: number = 0;
   p: number = 1;
 
+  order = "";
+
   constructor(private rnm: RnmApiService, private store: Store<AppState>) {
     this.rnm.currPage = 1;
   }
