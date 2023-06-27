@@ -34,19 +34,18 @@
                 </div>
             </mat-radio-group>
             <hr>
-            <mat-radio-group name="status" [(ngModel)]="status" (change)="onStatus()" class="select">
-                <h1>Status</h1>
+            <h1>Status</h1>
+            <mat-select placeholder="None" name="status" [(value)]="status" (selectionChange)="onStatus()">
                 <div>
-                    <mat-radio-button value="dead">Dead</mat-radio-button>
+                    <mat-option value="dead">Dead</mat-option>
                 </div>
                 <div>
-                    <mat-radio-button value="alive">Alive</mat-radio-button>
+                    <mat-option value="alive">Alive</mat-option>                    
                 </div>
                 <div>
-                    <mat-radio-button value="unknown">Unknown</mat-radio-button>
+                    <mat-option value="unknown">Unknown</mat-option>
                 </div>
-            </mat-radio-group>
-            <hr>
+            </mat-select>
         </form>
     </div>
 </div>
