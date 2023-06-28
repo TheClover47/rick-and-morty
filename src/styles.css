@@ -14,3 +14,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     background-color: rgba(0,0,0,0)!important;
 }
 
+.ngx-pagination .current{
+    background: #97ce4c!important;
+    border-radius: 50%;
+}
+

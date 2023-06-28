@@ -12,6 +12,10 @@
     position: relative;
 }
 
+.sort_icon{
+    vertical-align: bottom;
+}
+
 pagination-controls{
     white-space: nowrap;
 }
