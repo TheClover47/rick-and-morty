@@ -1,20 +1,21 @@
 <app-top-navigation-bar></app-top-navigation-bar>
 
 <!-- user data card -->
-
-<mat-card>
-  <img
-      class="rounded-circle profile-picture"
-      mat-card-image
-      src="https://i.pravatar.cc/150?img=63"
-      alt="Image"
-    />
-  <mat-card-title>Welcome {{ user.name }}</mat-card-title>
-  <mat-card-content>
-    <mat-icon>email</mat-icon>
-    {{user.email}}
-  </mat-card-content>
-  <mat-card-subtitle *ngIf="user.lastLogin !== 'None'">
-    Last login time: {{ user.lastLogin }}</mat-card-subtitle
-  >
-</mat-card>
+<div class="main">
+  <mat-card>
+    <img
+        class="rounded-circle profile-picture"
+        mat-card-image
+        src="https://i.pravatar.cc/150?img=63"
+        alt="Image"
+      />
+    <mat-card-title>Welcome {{ user.name }}</mat-card-title>
+    <mat-card-content>
+      <mat-icon>email</mat-icon>
+      {{user.email}}
+    </mat-card-content>
+    <mat-card-subtitle *ngIf="user.lastLogin !== 'None'">
+      Last login time: {{ user.lastLogin }}</mat-card-subtitle
+    >
+  </mat-card>
+</div>

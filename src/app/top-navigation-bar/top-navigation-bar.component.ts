@@ -10,6 +10,7 @@ import { BreakpointObserver } from '@angular/cdk/layout';
 })
 export class TopNavigationBarComponent {
   isMobile: boolean = false;
+  phoneNavOpen: boolean = false;
   constructor(
     public router: Router,
     private _snackBar: MatSnackBar,

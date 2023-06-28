@@ -19,7 +19,8 @@
     border: none;
 }
 .searchBar{
-    width: 350px;
+    max-width: 350px;
+    min-width: 100px;
     height: 45px;
     background-color: white;
     border-radius: 30px;

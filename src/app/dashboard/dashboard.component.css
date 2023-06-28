@@ -1,15 +1,22 @@
 mat-card{
     text-align: center;
     width: fit-content;
-    margin-top: 1%;
+    margin-top: 3%;
     margin-left: 1%;
-    box-shadow: 2px 2px 2px 2px black;
+    padding-left: 5px;
+    padding-right: 5px;
+    box-shadow: 0 0 15px black;
 }
 
 mat-card-content{
     align-self: center;
     display: flex;
     flex-direction: row;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
 }
 
 .profile-picture{
