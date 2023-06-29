@@ -29,41 +29,59 @@
 
 <!-- top nav -->
 <mat-toolbar class="sticky-top">
-  <button mat-icon-button (click)="sidenav.toggle()">
-    <mat-icon *ngIf="!sidenav.opened">menu</mat-icon>
-    <mat-icon *ngIf="sidenav.opened">close</mat-icon>
-  </button>
   <app-search-bar *ngIf="router.url === '/browse'"></app-search-bar>
 </mat-toolbar>
 
 <!-- sidenav -->
-<div class="sidebar">
+<!-- <div class="sidebar">
   <mat-sidenav-container class="navbar">
     <mat-sidenav #sidenav mode="over" autosize>
-      <!-- <app-top-navigation-bar></app-top-navigation-bar> -->
+
       <div class="column-reverse p-2">
         <div class="p-1">
           <a class="nav-link" (click)="logOut()">
-            <mat-icon>logout</mat-icon> Log Out
+            <mat-icon class="mat-icon">logout</mat-icon>
+            <span>Log Out</span>
           </a>
           <hr />
         </div>
 
         <div class="p-1">
           <a class="nav-link" routerLink="/dashboard">
-            <mat-icon>person</mat-icon> Profile
+            <mat-icon class="mat-icon">person</mat-icon> 
+            <span>Profile</span>
           </a>
           <hr />
         </div>
 
         <div class="p-1">
           <a class="nav-link" routerLink="/browse">
-            <mat-icon>home</mat-icon> Characters
+            <mat-icon class="mat-icon">home</mat-icon>
+            <span>Characters</span>
           </a>
-          <hr />
         </div>
+        <hr />
       </div>
     </mat-sidenav>
     <mat-sidenav-content class="sidenavCont"> </mat-sidenav-content>
   </mat-sidenav-container>
+</div> -->
+
+<div class="foot-nav">
+  <!-- <button mat-icon-button>
+    <mat-icon>check_box_outline_blank</mat-icon>
+    <mat-icon>close</mat-icon>
+  </button> -->
+    <a class="foot-link">
+      <mat-icon>home</mat-icon>
+      <span>Home</span>
+    </a>
+    <a class="foot-link">
+      <mat-icon>person</mat-icon>
+      <span>Profile</span>
+    </a>
+    <a class="foot-link">
+      <mat-icon>logout</mat-icon>
+      <span>Log out</span>
+    </a>
 </div>
