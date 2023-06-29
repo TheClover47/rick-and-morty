@@ -19,8 +19,20 @@ mat-card-content{
     justify-content: center;
 }
 
-.profile-picture{
-    max-width: 150px;
-    align-self: center;
-    margin-top: 10px;
+@media only screen and (min-width: 450px){
+    mat-card{
+        width: 40%;
+    }
+    .profile-picture{
+        width: 200px;
+        align-self: center;
+        margin-top: 10px;
+    }
+}
+@media only screen and (max-width: 450px){
+    .profile-picture{
+        max-width: 150px;
+        align-self: center;
+        margin-top: 10px;
+    }
 }

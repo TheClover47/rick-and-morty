@@ -33,4 +33,12 @@ export class FootNavComponent {
     localStorage.setItem('users', JSON.stringify(this.users));
     localStorage.removeItem('currentUser');
   }
+
+  scrollToTop(event: any) {
+    window.scroll({ 
+            top: 0, 
+            left: 0, 
+            behavior: 'smooth' 
+     });
+  }
 }

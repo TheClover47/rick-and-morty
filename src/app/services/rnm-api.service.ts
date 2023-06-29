@@ -30,7 +30,6 @@ export class RnmApiService {
     if (this.filterChange) {
       this.currPage = 1;
     }
-    console.log('Search: ', this.searchValue);
     const query = gql`
       query GetCharacters {
         characters(page: ${this.currPage}, 

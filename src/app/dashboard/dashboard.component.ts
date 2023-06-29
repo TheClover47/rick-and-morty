@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { UserItem } from '../store/models/userItem.model';
 import { AppState } from '../store/models/state.model';
 import { Character } from '../models/character';
+import { RnmApiService } from '../services/rnm-api.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,6 +14,7 @@ export class DashboardComponent implements OnInit {
   user: any;
   userItems!: Array<UserItem>;
   characterItems!: Array<Character>;
+
   constructor(private store: Store<AppState>) {
     this.user = JSON.parse(localStorage.getItem('currentUser') || '');
   }
@@ -27,6 +29,6 @@ export class DashboardComponent implements OnInit {
         this.characterItems = data.characters.map((data) => {
           return data;
         });
-      });
+      });   
   }
 }
