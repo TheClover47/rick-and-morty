@@ -10,7 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { CustomMaterialModule } from '../app/materialmodule/materialmodule.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SideNavigationPanelComponent } from './side-navigation-panel/side-navigation-panel.component';
 import { reducers } from './store/reducers';
 import { PopupComponentComponent } from './popup-component/popup-component.component';
@@ -21,6 +21,8 @@ import { CharacterCardComponent } from './character-card/character-card.componen
 import { NgxPaginationModule } from 'ngx-pagination';
 import { StoreModule } from '@ngrx/store';
 import { SortByPipe } from './shared/sort-by.pipe';
+import { LoaderInterceptor } from './services/loader.interceptor';
+import { FootNavComponent } from './foot-nav/foot-nav.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { SortByPipe } from './shared/sort-by.pipe';
     routingComponents,
     SideNavigationPanelComponent,
     PopupComponentComponent,
-    SortByPipe
+    SortByPipe,
+    FootNavComponent
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,7 @@ import { SortByPipe } from './shared/sort-by.pipe';
     GraphQLModule,
     NgxPaginationModule,
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -5,6 +5,9 @@ import { Store } from '@ngrx/store';
 import { AddCharacterAction } from '../store/actions/character.action';
 import { AppState } from '../store/models/state.model';
 import { subscribe } from 'graphql';
+import { LoaderService } from '../services/loader.service';
+import { Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-characters-list',
@@ -17,14 +20,18 @@ export class CharactersListComponent implements OnInit {
   status: any;
   charCount: number = 0;
   p: number = 1;
+  isLoading: Subject<boolean> = this.loader.isLoading;
+  firstLoad = true;
 
   order = "";
 
-  constructor(private rnm: RnmApiService, private store: Store<AppState>) {
+  constructor(private http: HttpClient ,private rnm: RnmApiService, private store: Store<AppState>, private loader: LoaderService) {
     this.rnm.currPage = 1;
+    this.isLoading.next(true);
   }
 
   ngOnInit() {
+    this.isLoading.next(true);
     this.rnm.getQueryChange.subscribe(nodata =>{
       this.rnm.getCharacters().forEach((data: any) => {
         if(this.rnm.filterChange == true){this.p = 1}
@@ -33,6 +40,9 @@ export class CharactersListComponent implements OnInit {
           this.store.dispatch(new AddCharacterAction(this.character));
         }
           this.charCount = data.data.characters.info.count;
+          if(this.firstLoad){
+            this.firstLoad = false;
+          }
       });
       }
     )

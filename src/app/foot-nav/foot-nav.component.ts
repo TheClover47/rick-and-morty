@@ -1,21 +1,14 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
-  selector: 'app-top-navigation-bar',
-  templateUrl: './top-navigation-bar.component.html',
-  styleUrls: ['./top-navigation-bar.component.css'],
+  selector: 'app-foot-nav',
+  templateUrl: './foot-nav.component.html',
+  styleUrls: ['./foot-nav.component.css']
 })
-export class TopNavigationBarComponent {
-  isMobile: boolean = false;
-  phoneNavOpen: boolean = false;
-  constructor(
-    public router: Router,
-    private _snackBar: MatSnackBar,
-    private breakpointObserver: BreakpointObserver
-  ) {}
+export class FootNavComponent {
+  constructor(private router: Router, private _snackBar: MatSnackBar){}
 
   users: any[] = JSON.parse(localStorage.getItem('users') || '');
   user: any[] = [];

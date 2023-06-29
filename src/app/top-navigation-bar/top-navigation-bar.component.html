@@ -1,4 +1,5 @@
 <!-- [ngClass]="isMobile ? 'navigation-mobile' : 'navigation'" -->
+<!-- top nav -->
 <div class="navigation flex-row-reverse p-2">
     <div class="navbar-item">
 
@@ -27,61 +28,12 @@
     </div>
   </div>
 
-<!-- top nav -->
-<mat-toolbar class="sticky-top">
-  <app-search-bar *ngIf="router.url === '/browse'"></app-search-bar>
-</mat-toolbar>
-
-<!-- sidenav -->
-<!-- <div class="sidebar">
-  <mat-sidenav-container class="navbar">
-    <mat-sidenav #sidenav mode="over" autosize>
-
-      <div class="column-reverse p-2">
-        <div class="p-1">
-          <a class="nav-link" (click)="logOut()">
-            <mat-icon class="mat-icon">logout</mat-icon>
-            <span>Log Out</span>
-          </a>
-          <hr />
-        </div>
-
-        <div class="p-1">
-          <a class="nav-link" routerLink="/dashboard">
-            <mat-icon class="mat-icon">person</mat-icon> 
-            <span>Profile</span>
-          </a>
-          <hr />
-        </div>
-
-        <div class="p-1">
-          <a class="nav-link" routerLink="/browse">
-            <mat-icon class="mat-icon">home</mat-icon>
-            <span>Characters</span>
-          </a>
-        </div>
-        <hr />
-      </div>
-    </mat-sidenav>
-    <mat-sidenav-content class="sidenavCont"> </mat-sidenav-content>
-  </mat-sidenav-container>
-</div> -->
-
-<div class="foot-nav">
-  <!-- <button mat-icon-button>
-    <mat-icon>check_box_outline_blank</mat-icon>
-    <mat-icon>close</mat-icon>
-  </button> -->
-    <a class="foot-link">
-      <mat-icon>home</mat-icon>
-      <span>Home</span>
-    </a>
-    <a class="foot-link">
-      <mat-icon>person</mat-icon>
-      <span>Profile</span>
-    </a>
-    <a class="foot-link">
-      <mat-icon>logout</mat-icon>
-      <span>Log out</span>
-    </a>
+<!-- mobile top nav -->
+<div class="toolbar" *ngIf="router.url === '/browse'">
+  <div class="mx-auto">
+  <app-search-bar></app-search-bar>
+  </div>
 </div>
+
+<!-- foot nav -->
+<app-foot-nav></app-foot-nav>

@@ -8,7 +8,24 @@
 }
 
 .sort{
-    z-index: 100;
+    z-index: 10;
+    position: relative;
+}
+
+.sort_icon{
+    vertical-align: bottom;
+}
+
+pagination-controls{
+    white-space: nowrap;
+}
+
+.spinner{
+    margin: 0 auto;
+}
+
+.mat-mdc-progress-spinner {
+    --mdc-circular-progress-active-indicator-color: #97ce4c;
 }
 
 @media only screen and (min-width: 450px) {
@@ -20,8 +37,5 @@
    .card-list{
     float: right!important;
     width: 80%;
-   }
-   .cards{
-    margin-bottom: 150px;
    }
 }

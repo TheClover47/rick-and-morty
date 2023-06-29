@@ -2,18 +2,29 @@
     <app-top-navigation-bar></app-top-navigation-bar>
     <app-side-navigation-panel class="filters"></app-side-navigation-panel>
     <div class="card-list text-center mt-3">
-        <div class="container-fluid cards">
+        <div *ngIf="firstLoad || (isLoading | async)">
+            <h1>Teleporting the characters</h1>
+            <mat-spinner [diameter]="70" class="spinner"></mat-spinner>
+        </div>
+        <div *ngIf="!firstLoad && !(isLoading | async)" class="container-fluid cards mb-4">
             <div class="container mb-3 sort">
-                <label class="me-2">Sort By Name</label>
-                <select [(ngModel)] = 'order'>
-                    <option value="">None</option>
-                    <option value="asc">Asc</option>
-                    <option value="desc">Desc</option>
-                </select>
+                <div>
+                    <label class="me-2">Sort by Name Order:</label>
+                    <select [(ngModel)] = 'order'>
+                        <option value="">None</option>
+                        <option value="asc">Asc</option>
+                        <option value="desc">Desc</option>
+                    </select>
+                </div>
             </div>
             <app-character-card class="m-2" [character]="character" *ngFor="let character of characters | paginate:{ itemsPerPage: 20, currentPage: p, totalItems: charCount} | sortBy: order: 'name'"></app-character-card>
-            <pagination-controls (pageChange)="getPage($event)" class="float-right"></pagination-controls>
+            <div class="container">
+                <pagination-controls (pageChange)="getPage($event)" class="float-right"
+                [maxSize]="5" previousLabel="" nextLabel="" [autoHide]="true">
+                </pagination-controls>
+            </div>
         </div>
     </div>
 </div>
+
 
