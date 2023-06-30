@@ -45,7 +45,7 @@ export class RegisterComponent {
       [
         Validators.required,
         Validators.pattern(
-          /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*.{1,}$/
+          /^[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\.[a-zA-Z0-9]+)$/
         ),
       ],
       userExistsValidator,
