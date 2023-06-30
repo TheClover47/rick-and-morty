@@ -29,6 +29,12 @@ a{
     display: none;
 }
 
+.mat-icon{
+    width: fit-content;
+    height: fit-content;
+    padding-top: 5px;
+}
+
 @media only screen and (max-width: 450px) {
     .navigation {
         display: none;
@@ -45,9 +51,7 @@ a{
     .nav-link{
         color: black;
     }
-    .mat-icon{
-        padding-top: 3px;
-    }
+   
     .toolbar{
         display: flex;
         width: 100%;
