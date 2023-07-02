@@ -11,7 +11,6 @@
     margin-top: 2%;
     margin-left: 4%;
     margin-right: 5%;
-    box-sizing: none;
     outline: none;
     font-size: 14pt;
 }
@@ -26,6 +25,7 @@
 .mat-icon{
     cursor: pointer;
 }
+
 @media only screen and (max-width: 695px) {
     .searchBar{
         width: 100%;

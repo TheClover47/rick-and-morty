@@ -4,7 +4,7 @@ import { orderBy } from 'lodash';
 @Pipe({
   name: 'sortBy'
 })
-export class SortByPipe implements PipeTransform {
+export class SortByPipe implements PipeTransform { //Sort by any property
 
   transform(value: any[], order: any = '', column: string = ''): any[] {
     if (!value || order === '' || !order) { return value; } // no array

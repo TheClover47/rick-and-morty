@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { RnmApiService } from '../services/rnm-api.service';
 import { Store } from '@ngrx/store';
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.css'],
 })
-export class SearchBarComponent implements OnInit {
+export class SearchBarComponent {
   constructor(
     private fb: FormBuilder,
     private rnm: RnmApiService,
@@ -19,25 +19,23 @@ export class SearchBarComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit() {}
-
   characters!: Character[];
   character!: Character;
   searchValue = '';
   searchForm = this.fb.nonNullable.group({ searchValue: '' });
 
-  fetchCharacterData() {
+  fetchCharacterData() { //Sets searchvalue and updates the query
     this.rnm.setSearchValue(this.searchValue);
     this.rnm.querySatus.next(!this.rnm.querySatus);
   }
 
-  onSearchSubmit() {
+  onSearchSubmit() { //Search function for pressing enter
     this.searchValue = this.searchForm.value.searchValue ?? '';
     console.log('On enter: ', this.searchValue);
     this.fetchCharacterData();
     this.router.navigate(['browse']);
   }
-  searchCharacter() {
+  iconSearch() { //Search function for search icon
     this.searchValue = this.searchForm.value.searchValue ?? '';
     console.log('Searching...');
     console.log('Here: ', this.searchValue);

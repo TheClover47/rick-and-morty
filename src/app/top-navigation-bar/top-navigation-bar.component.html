@@ -1,8 +1,6 @@
-<!-- [ngClass]="isMobile ? 'navigation-mobile' : 'navigation'" -->
 <!-- top nav -->
 <div class="navigation flex-row-reverse p-2">
     <div class="navbar-item">
-
       <a class="nav-link" (click)="logOut()">
         <mat-icon class="text-white">logout</mat-icon>
         <p>Log out</p>
@@ -10,7 +8,6 @@
     </div>
 
     <div class="navbar-item">
-
       <a class="nav-link" routerLink="/dashboard">
         <mat-icon class="text-white">person</mat-icon>
         <p>Profile</p>
@@ -26,12 +23,12 @@
     <div class="mx-auto">
       <app-search-bar *ngIf="router.url === '/browse'"></app-search-bar>
     </div>
-  </div>
+</div>
 
 <!-- mobile top nav -->
 <div class="toolbar" *ngIf="router.url === '/browse'">
   <div class="mx-auto">
-  <app-search-bar></app-search-bar>
+    <app-search-bar></app-search-bar>
   </div>
 </div>
 

@@ -19,25 +19,25 @@ export class SideNavigationPanelComponent {
   species = "";
   gender = "";
 
-  onStatus(){
+  onStatus(){ //Filter by status
     this.rnm.statusValue = this.status;
     this.rnm.filterChange = true;
     this.rnm.querySatus.next(!this.rnm.querySatus);
   }
 
-  onSpecies(){
+  onSpecies(){ //Filter by species
     this.rnm.speciesValue = this.species;
     this.rnm.filterChange = true;
     this.rnm.querySatus.next(!this.rnm.querySatus);
   }
 
-  onGender(){
+  onGender(){ //Filter by gender
     this.rnm.genderValue = this.gender;
     this.rnm.filterChange = true;
     this.rnm.querySatus.next(!this.rnm.querySatus);
   }
 
-  showSidenav(){
+  showSidenav(){ //Toggle the sidenav on mobile devices
     if(this.visible) this.visible = false;
     else this.visible = true;
   }

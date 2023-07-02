@@ -37,3 +37,12 @@ mat-card-content{
         margin-top: 10px;
     }
 }
+
+@media only screen and (min-width: 1024px){
+    /* .info{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        margin-left: 30%;
+    } */
+}
