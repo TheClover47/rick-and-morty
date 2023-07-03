@@ -14,19 +14,12 @@ export class LoginComponent {
   user:User = {name: '',email: '', password:''};
   submitted = false;
   regExPattern = "/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*.{1,}$/";
+  wrongdetails = false;
 
-  constructor(private _loginService: UserService, private router: Router, private _snackBar: MatSnackBar){}
+  constructor(private _loginService: UserService, private router: Router){}
 
   addUser(){
     this._loginService.add(this.user.email, this.user)
-  }
-
-  openLogOutSnackBar() { //Function for opening a snackbar
-    this._snackBar.open('Wrong Details!', 'OK!', {
-      duration: 10000,
-      verticalPosition: 'top',
-      panelClass: 'snackBar',
-    });
   }
 
   onSubmit(){
@@ -35,6 +28,6 @@ export class LoginComponent {
       this.submitted = true;
       this.router.navigate(['/dashboard']);
     }
-    else alert("Wrong credentials!")
+    else this.wrongdetails = true;
   }
 }

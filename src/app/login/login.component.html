@@ -42,7 +42,10 @@
               >Password is required!</mat-error
             >
             <mat-error *ngIf="password.errors?.['pattern']"
-              >Doesnt match pattern!</mat-error
+              >Incorrect password!</mat-error
+            >
+            <mat-error *ngIf="wrongdetails"
+              >Wrong details!</mat-error
             >
           </mat-form-field>
         </div>
