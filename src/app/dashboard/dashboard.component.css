@@ -27,6 +27,7 @@ mat-card-content{
 
 .info{
     width: fit-content;
+    padding-bottom: 5%;
 }
 
 @media only screen and (min-width: 450px){
@@ -43,7 +44,7 @@ mat-card-content{
         margin-top: 10px;
     }
     .info{
-        margin-bottom: 300px;
+        padding-bottom: 15%;
     }
 }
 
@@ -53,9 +54,5 @@ mat-card-content{
         flex-direction: column;
         text-align: left;
         margin-left: 30%;
-    }
-
-    .info_div{
-        padding-bottom: 12%;
     }
 }
