@@ -19,3 +19,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; width: 100%
     border-radius: 50%;
 }
 
+.mat-mdc-menu-content.mdc-list{
+    background: #97ce4c!important;
+}
+
+.mat-mdc-menu-item {
+    vertical-align: middle;
+}
+

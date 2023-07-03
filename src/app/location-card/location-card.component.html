@@ -2,7 +2,7 @@
   <mat-card-title>{{ location.name }}</mat-card-title>
   <mat-card-content>
     <p>Type: {{ location.type }}</p>
-    <p>Dimension:</p>
+    <p *ngIf="location.dimension!=''">Dimension:</p>
     <p>{{ location.dimension }}</p>
   </mat-card-content>
 </mat-card>
