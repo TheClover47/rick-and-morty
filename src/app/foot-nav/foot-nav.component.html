@@ -1,17 +1,27 @@
 <!-- mobile foot nav -->
         <div class="foot-nav">
-            <!-- <button mat-icon-button>
-            <mat-icon>check_box_outline_blank</mat-icon>
-            <mat-icon>close</mat-icon>
-            </button> -->
-            <a class="foot-link" routerLink="/characters" (click)="scrollToTop($event)">
-                <mat-icon class="fa fa-users fa-lg"></mat-icon>
-                <span>Characters</span>
-            </a>
             <a class="foot-link" routerLink="/dashboard">
                 <mat-icon class="fa fa-user fa-lg"></mat-icon>
                 <span>Profile</span>
             </a>
+            <button class="menu text-white" [matMenuTriggerFor]="appMenu">
+                <mat-icon class="fa fa-book fa-lg menu-icon"></mat-icon>
+                <p>Browse</p>
+              </button>
+              <mat-menu class="menu" #appMenu="matMenu">
+                <a mat-menu-item routerLink="/characters">
+                  <mat-icon class="fa fa-users fa-lg text-white"></mat-icon>
+                  <p class="text-white">Characters</p>
+                </a>
+                <a mat-menu-item routerLink="/episodes">
+                  <mat-icon class="fa fa-film fa-lg text-white"></mat-icon>
+                  <p class="text-white">Episodes</p>
+                </a>
+                <a mat-menu-item routerLink="/locations">
+                  <mat-icon class="fa fa-globe fa-lg text-white"></mat-icon>
+                  <p class="text-white">Locations</p>
+                </a>
+              </mat-menu>
             <a class="foot-link" (click)="logOut()">
                 <mat-icon class="fa fa-sign-out fa-lg"></mat-icon>
                 <span>Log out</span>

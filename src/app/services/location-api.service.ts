@@ -10,7 +10,6 @@ import { BehaviorSubject } from 'rxjs';
 export class LocationApiService {
   searchValue = '';
   currPage = 1;
-  filterChange: boolean = false;
   querySatus = new BehaviorSubject<boolean>(false);
 
   constructor(private apollo: Apollo) {}
@@ -24,12 +23,9 @@ export class LocationApiService {
   }
 
   getLocations() {
-    if (this.filterChange) {
-      this.currPage = 1;
-    }
     const query = gql`
       query GetLocations {
-        locations(page: 1, 
+        locations(page: ${this.currPage}, 
           filter: {name: ""}) {
           info {
             count

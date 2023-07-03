@@ -15,24 +15,26 @@
     </div>
 
     <div class="navbar-item">
-        <a class="nav-link" routerLink="/characters">
+      <button class="nav-link" [matMenuTriggerFor]="appMenu">
+        <mat-icon class="fa fa-book fa-lg text-white"></mat-icon>
+        <p>Browse</p>
+      </button>
+      <mat-menu class="menu" #appMenu="matMenu">
+        <a class="nav-link " mat-menu-item routerLink="/characters">
           <mat-icon class="fa fa-users fa-lg text-white"></mat-icon>
-          <p>Characters</p>
+          <p class="text-white">Characters</p>
         </a>
-    </div>
-    <div class="navbar-item">
-      <a class="nav-link" routerLink="/episodes">
-        <mat-icon class="fa fa-film fa-lg text-white"></mat-icon>
-        <p>Episodes</p>
-      </a>
+        <a class="nav-link " mat-menu-item routerLink="/episodes">
+          <mat-icon class="fa fa-film fa-lg text-white"></mat-icon>
+          <p class="text-white">Episodes</p>
+        </a>
+        <a class="nav-link " mat-menu-item routerLink="/locations">
+          <mat-icon class="fa fa-globe fa-lg text-white"></mat-icon>
+          <p class="text-white">Locations</p>
+        </a>
+      </mat-menu>
     </div>
 
-    <div class="navbar-item">
-      <a class="nav-link" routerLink="/locations">
-        <mat-icon class="fa fa-globe fa-lg text-white"></mat-icon>
-        <p>Loactions</p>
-      </a>
-    </div>
     <div class="mx-auto">
       <app-search-bar *ngIf="router.url === '/characters'"></app-search-bar>
     </div>
