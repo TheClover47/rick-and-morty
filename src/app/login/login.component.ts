@@ -14,12 +14,18 @@ export class LoginComponent {
   user:User = {name: '',email: '', password:''};
   submitted = false;
   regExPattern = "/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*.{1,}$/";
-  wrongdetails = false;
+  wrongdetails: boolean = false;
 
   constructor(private _loginService: UserService, private router: Router){}
 
   addUser(){
     this._loginService.add(this.user.email, this.user)
+  }
+
+  isWrong(){
+    if(this.wrongdetails){
+      return true;
+    } else return false;
   }
 
   onSubmit(){
@@ -28,6 +34,6 @@ export class LoginComponent {
       this.submitted = true;
       this.router.navigate(['/dashboard']);
     }
-    else this.wrongdetails = true;
+    else alert("Wrong details!")
   }
 }
