@@ -19,7 +19,8 @@ export class SearchBarComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   characters!: Character[];
   character!: Character;

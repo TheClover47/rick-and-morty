@@ -20,9 +20,16 @@
     <div class="navbar-item">
         <a class="nav-link" routerLink="/browse">
           <mat-icon class="fa fa-users fa-lg text-white"></mat-icon>
-          <p>Browse</p>
+          <p>Characters</p>
         </a>
     </div>
+
+    <div class="navbar-item">
+      <a class="nav-link" routerLink="/locations">
+        <mat-icon class="fa fa-globe fa-lg text-white"></mat-icon>
+        <p>Loactions</p>
+      </a>
+  </div>
     <div class="mx-auto">
       <app-search-bar *ngIf="router.url === '/browse'"></app-search-bar>
     </div>

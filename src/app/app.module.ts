@@ -23,6 +23,7 @@ import { StoreModule } from '@ngrx/store';
 import { SortByPipe } from './shared/sort-by.pipe';
 import { LoaderInterceptor } from './services/loader.interceptor';
 import { FootNavComponent } from './foot-nav/foot-nav.component';
+import { LocationCardComponent } from './location-card/location-card.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { FootNavComponent } from './foot-nav/foot-nav.component';
     CharactersListComponent,
     TopNavigationBarComponent,
     CharacterCardComponent,
+    LocationCardComponent,
     DashboardComponent,
     SearchBarComponent,
     routingComponents,

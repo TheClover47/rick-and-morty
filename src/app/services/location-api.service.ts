@@ -5,19 +5,15 @@ import { ApiData } from '../models/apiData';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class RnmApiService{
+export class LocationApiService {
   searchValue = '';
-  statusValue = '';
-  speciesValue = '';
-  genderValue = '';
   currPage = 1;
   filterChange: boolean = false;
   querySatus = new BehaviorSubject<boolean>(false);
 
-  constructor(private apollo: Apollo) {
-  }
+  constructor(private apollo: Apollo) {}
 
   setSearchValue(value: string) {
     this.searchValue = value;
@@ -27,17 +23,14 @@ export class RnmApiService{
     return this.querySatus.asObservable();
   }
 
-  getCharacters() {
+  getLocations() {
     if (this.filterChange) {
       this.currPage = 1;
     }
     const query = gql`
-      query GetCharacters {
-        characters(page: ${this.currPage}, 
-          filter: {name: "${this.searchValue}", 
-          status:"${this.statusValue}", 
-          species:"${this.speciesValue}",
-           gender:"${this.genderValue}"}) {
+      query GetLocations {
+        locations(page: 1, 
+          filter: {name: ""}) {
           info {
             count
             pages
@@ -47,17 +40,8 @@ export class RnmApiService{
           results {
             id
             name
-            status
-            species
             type
-            gender
-            origin {
-              name
-            }
-            location {
-              name
-            }
-            image
+            dimension
             created
           }
         }
@@ -69,3 +53,5 @@ export class RnmApiService{
     });
   }
 }
+
+

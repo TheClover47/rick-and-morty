@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { RnmApiService } from '../services/rnm-api.service';
-import { Character } from '../models/character';
+import { Component } from '@angular/core';
+import { LocationApiService } from '../services/location-api.service';
+import { Location } from '../models/location';
 import { Store } from '@ngrx/store';
 import { AddCharacterAction } from '../store/actions/character.action';
 import { AppState } from '../store/models/state.model';
@@ -9,22 +9,22 @@ import { Subject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-characters-list',
-  templateUrl: './characters-list.component.html',
-  styleUrls: ['./characters-list.component.css']
+  selector: 'app-loaction-list',
+  templateUrl: './loaction-list.component.html',
+  styleUrls: ['./loaction-list.component.css']
 })
-export class CharactersListComponent implements OnInit {
-  characters!: Character[];
-  character!: Character;
+export class LoactionListComponent {
+  locations!: Location[];
+  location!: Location;
   status: any;
-  charCount: number = 0;
+  locationCount: number = 0;
   p: number = 1;
   isLoading: Subject<boolean> = this.loader.isLoading;
   firstLoad = true;
 
   order = "";
 
-  constructor(private http: HttpClient ,private rnm: RnmApiService, private store: Store<AppState>, private loader: LoaderService) {
+  constructor(private http: HttpClient ,private rnm: LocationApiService, private store: Store<AppState>, private loader: LoaderService) {
     this.rnm.currPage = 1;
     this.isLoading.next(true);
   }
@@ -32,13 +32,13 @@ export class CharactersListComponent implements OnInit {
   ngOnInit() {
     this.isLoading.next(true);
     this.rnm.getQueryChange.subscribe(nodata =>{
-      this.rnm.getCharacters().forEach((data: any) => {
+      this.rnm.getLocations().forEach((data: any) => {
         if(this.rnm.filterChange == true){this.p = 1}
-        this.characters = data.data.characters.results;
-        for (this.character of this.characters){
+        this.locations = data.data.locations.results;
+        /* for (this.character of this.characters){
           this.store.dispatch(new AddCharacterAction(this.character));
-        }
-          this.charCount = data.data.characters.info.count;
+        } */
+          this.locationCount = data.data.locations.info.count;
           if(this.firstLoad){
             this.firstLoad = false;
           }
