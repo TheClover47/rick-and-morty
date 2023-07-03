@@ -1,0 +1,9 @@
+<mat-card>
+    <mat-card-title>{{ episode.name }}</mat-card-title>
+    <!-- <img alt="profile-image" mat-card-image [src]="character.image" /> -->
+    <mat-card-content>
+      <p>Air Date: {{ episode.air_date }}</p>
+      <p>Episode:       {{ episode.episode }}</p>
+      <p>Added: {{ episode.created | date }}</p>
+    </mat-card-content>
+  </mat-card>

@@ -4,16 +4,16 @@
             <mat-icon>check_box_outline_blank</mat-icon>
             <mat-icon>close</mat-icon>
             </button> -->
-            <a class="foot-link" routerLink="/browse" (click)="scrollToTop($event)">
-                <mat-icon>home</mat-icon>
-                <span>Home</span>
+            <a class="foot-link" routerLink="/characters" (click)="scrollToTop($event)">
+                <mat-icon class="fa fa-users fa-lg"></mat-icon>
+                <span>Characters</span>
             </a>
             <a class="foot-link" routerLink="/dashboard">
-                <mat-icon>person</mat-icon>
+                <mat-icon class="fa fa-user fa-lg"></mat-icon>
                 <span>Profile</span>
             </a>
             <a class="foot-link" (click)="logOut()">
-                <mat-icon>logout</mat-icon>
+                <mat-icon class="fa fa-sign-out fa-lg"></mat-icon>
                 <span>Log out</span>
             </a>
         </div>

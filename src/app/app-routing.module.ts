@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { authGuard } from './auth.guard';
 import { CharactersListComponent } from './characters-list/characters-list.component';
+import { EpisodesListComponent } from './episodes-list/episodes-list.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
   },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'browse', component: CharactersListComponent },
+  { path: 'characters', component: CharactersListComponent },
+  { path: 'episodes', component: EpisodesListComponent },
   { path: '**', redirectTo: '' },
 ];
 

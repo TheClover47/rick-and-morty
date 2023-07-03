@@ -23,6 +23,8 @@ import { StoreModule } from '@ngrx/store';
 import { SortByPipe } from './shared/sort-by.pipe';
 import { LoaderInterceptor } from './services/loader.interceptor';
 import { FootNavComponent } from './foot-nav/foot-nav.component';
+import { EpisodesListComponent } from './episodes-list/episodes-list.component';
+import { EpisodeCardComponent } from './episode-card/episode-card.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { FootNavComponent } from './foot-nav/foot-nav.component';
     SideNavigationPanelComponent,
     PopupComponentComponent,
     SortByPipe,
-    FootNavComponent
+    FootNavComponent,
+    EpisodesListComponent,
+    EpisodeCardComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 mat-card{
     text-align: center;
-    width: fit-content;
+    width: 70%;
     min-width: 220px;
     margin-top: 3%;
     margin-left: 1%;
@@ -20,10 +20,16 @@ mat-card-content{
     justify-content: center;
 }
 
+.info_div{
+    justify-content: center;
+    padding-bottom: auto;
+}
+
+.info{
+    width: fit-content;
+}
+
 @media only screen and (min-width: 450px){
-    mat-card{
-        width: 40%;
-    }
     .profile-picture{
         width: 200px;
         align-self: center;
@@ -45,4 +51,8 @@ mat-card-content{
         text-align: left;
         margin-left: 30%;
     } */
+
+    .info_div{
+        padding-bottom: 12%;
+    }
 }

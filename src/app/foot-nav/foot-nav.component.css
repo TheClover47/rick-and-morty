@@ -2,6 +2,11 @@
     display: none;
 }
 
+mat-icon{
+    padding-top: 5px;
+    text-align: center;
+}
+
 @media only screen and (max-width: 450px) {
     .foot-nav{
         background-color:#97ce4c;

@@ -2,31 +2,51 @@
 <div class="navigation flex-row-reverse p-2">
     <div class="navbar-item">
       <a class="nav-link" (click)="logOut()">
-        <mat-icon class="text-white">logout</mat-icon>
+        <mat-icon class="fa fa-sign-out fa-lg text-white"></mat-icon>
         <p>Log out</p>
       </a>
     </div>
 
     <div class="navbar-item">
       <a class="nav-link" routerLink="/dashboard">
-        <mat-icon class="text-white">person</mat-icon>
+        <mat-icon class="fa fa-user fa-lg text-white"></mat-icon>
         <p>Profile</p>
       </a>
     </div>
 
-    <div class="navbar-item">
-        <a class="nav-link" routerLink="/browse">
-          <mat-icon class="text-white">home</mat-icon>
-          <p>Browse</p>
+    <!-- <div class="navbar-item">
+        <a class="nav-link" routerLink="/characters">
+          <mat-icon class="fa fa-users fa-lg text-white"></mat-icon>
+          <p>Characters</p>
         </a>
     </div>
+    <div class="navbar-item">
+      <a class="nav-link" routerLink="/episodes">
+        <mat-icon class="fa fa-users fa-lg text-white"></mat-icon>
+        <p>Episodes</p>
+      </a>
+    </div> -->
+
+    <mat-select placeholder="Browse" name="status" >
+      <i class="fa fa-book" aria-hidden="true"></i>
+      <div>
+          <mat-option value="dead">Dead</mat-option>
+      </div>
+      <div>
+          <mat-option value="alive">Alive</mat-option>                    
+      </div>
+      <div>
+          <mat-option value="unknown">Unknown</mat-option>
+      </div>
+    </mat-select>
+
     <div class="mx-auto">
-      <app-search-bar *ngIf="router.url === '/browse'"></app-search-bar>
+      <app-search-bar *ngIf="router.url === '/characters'"></app-search-bar>
     </div>
 </div>
 
 <!-- mobile top nav -->
-<div class="toolbar" *ngIf="router.url === '/browse'">
+<div class="toolbar" *ngIf="router.url === '/characters'">
   <div class="mx-auto">
     <app-search-bar></app-search-bar>
   </div>

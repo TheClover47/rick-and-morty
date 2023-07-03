@@ -4,8 +4,8 @@
     </div>
     <div [class.visible]="visible" class="sidebar">
         <form>
-            <hr>
-            <mat-radio-group name="gender" [(ngModel)]="gender" (change)="onGender()" class="select">
+            <hr *ngIf="router.url === '/characters'">
+            <mat-radio-group *ngIf="router.url === '/characters'" name="gender" [(ngModel)]="gender" (change)="onGender()" class="select">
                 <h1>Gender</h1>
                 <div>
                     <mat-radio-button value="female">Female</mat-radio-button>
@@ -20,8 +20,8 @@
                     <mat-radio-button value="unknown">Unknown</mat-radio-button>
                 </div>
             </mat-radio-group>
-            <hr>
-            <mat-radio-group name="species" [(ngModel)]="species" (change)="onSpecies()" class="select">
+            <hr *ngIf="router.url === '/characters'">
+            <mat-radio-group *ngIf="router.url === '/characters'" name="species" [(ngModel)]="species" (change)="onSpecies()" class="select">
                 <h1>Species</h1>
                 <div>
                     <mat-radio-button value="alien">Alien</mat-radio-button>
@@ -36,9 +36,9 @@
                     <mat-radio-button value="robot">Robot</mat-radio-button>
                 </div>
             </mat-radio-group>
-            <hr>
-            <h1>Status</h1>
-            <mat-select placeholder="None" name="status" [(value)]="status" (selectionChange)="onStatus()">
+            <hr *ngIf="router.url === '/characters'">
+            <h1 *ngIf="router.url === '/characters'">Status</h1>
+            <mat-select *ngIf="router.url === '/characters'" placeholder="None" name="status" [(value)]="status" (selectionChange)="onStatus()">
                 <div>
                     <mat-option value="dead">Dead</mat-option>
                 </div>

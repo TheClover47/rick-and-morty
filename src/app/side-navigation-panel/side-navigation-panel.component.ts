@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RnmApiService } from '../services/rnm-api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-side-navigation-panel',
@@ -8,7 +9,7 @@ import { RnmApiService } from '../services/rnm-api.service';
 })
 export class SideNavigationPanelComponent {
 
-  constructor(private rnm: RnmApiService){
+  constructor(private rnm: RnmApiService, public router: Router){
     rnm.statusValue = "";
     rnm.speciesValue = "";
     rnm.genderValue = "";
