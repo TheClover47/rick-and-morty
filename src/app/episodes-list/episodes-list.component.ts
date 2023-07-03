@@ -30,13 +30,10 @@ export class EpisodesListComponent {
       this.ep.getEpisodes().forEach((data: any) => {
         if(this.ep.filterChange == true){this.p = 1}
         this.episodes = data.data.episodes.results;
-        // for (this.episode of this.episodes){
-        //   this.store.dispatch(new AddEpisodeAction(this.episode));
-        // }
-          this.charCount = data.data.episodes.info.count;
-          if(this.firstLoad){
-            this.firstLoad = false;
-          }
+        this.charCount = data.data.episodes.info.count;
+        if(this.firstLoad){
+          this.firstLoad = false;
+        }
       });
       }
     )

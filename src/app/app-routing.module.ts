@@ -10,11 +10,7 @@ import { LoactionListComponent } from './loaction-list/loaction-list.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  {
-    path: 'dashboard',
-    canActivate: [authGuard],
-    component: DashboardComponent,
-  },
+  { path: 'dashboard', canActivate: [authGuard], component: DashboardComponent,},
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'characters', component: CharactersListComponent },

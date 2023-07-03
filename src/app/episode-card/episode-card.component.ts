@@ -9,16 +9,4 @@ import { PopupComponentComponent } from '../popup-component/popup-component.comp
 })
 export class EpisodeCardComponent {
   @Input() episode: any;
-
-  constructor(private dialog:MatDialog){}
-
-  onOpenDialog(){
-    const dialogRef = this.dialog.open(PopupComponentComponent, {
-      data: {id: this.episode.id},
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
-  }
 }

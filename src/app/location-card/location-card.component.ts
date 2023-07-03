@@ -12,15 +12,4 @@ export class LocationCardComponent {
 
   @Input() location: any;
 
-  infoActive = false;
-
-  onOpenDialog(){
-    const dialogRef = this.dialog.open(PopupComponentComponent, {
-      data: {id: this.location.id},
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
-  }
 }

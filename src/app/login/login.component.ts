@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { User } from '../models/user';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -14,10 +15,18 @@ export class LoginComponent {
   submitted = false;
   regExPattern = "/^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*.{1,}$/";
 
-  constructor(private _loginService: UserService, private router: Router){}
+  constructor(private _loginService: UserService, private router: Router, private _snackBar: MatSnackBar){}
 
   addUser(){
     this._loginService.add(this.user.email, this.user)
+  }
+
+  openLogOutSnackBar() { //Function for opening a snackbar
+    this._snackBar.open('Wrong Details!', 'OK!', {
+      duration: 10000,
+      verticalPosition: 'top',
+      panelClass: 'snackBar',
+    });
   }
 
   onSubmit(){
@@ -26,6 +35,6 @@ export class LoginComponent {
       this.submitted = true;
       this.router.navigate(['/dashboard']);
     }
-    else alert("Wrong credentials!")/* alert("This user is not registered!"); */
+    else alert("Wrong credentials!")
   }
 }

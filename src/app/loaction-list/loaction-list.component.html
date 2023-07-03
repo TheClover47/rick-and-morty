@@ -9,7 +9,7 @@
         <div *ngIf="!firstLoad && !(isLoading | async)" class="container-fluid cards">
             <div class="container mb-3 sort">
                 <div>
-                    <label class="me-2">Sort by Name Order:</label>
+                    <label class="me-2">Sort by Name:</label>
                     <select [(ngModel)] = 'order'>
                         <option value="">None</option>
                         <option value="asc">Asc</option>

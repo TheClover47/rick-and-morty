@@ -12,15 +12,9 @@ export class CharacterCardComponent {
 
   @Input() character: any;
 
-  infoActive = false;
-
   onOpenDialog(){
     const dialogRef = this.dialog.open(PopupComponentComponent, {
       data: {id: this.character.id},
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
     });
   }
 }

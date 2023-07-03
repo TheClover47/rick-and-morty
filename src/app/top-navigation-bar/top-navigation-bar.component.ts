@@ -12,7 +12,8 @@ export class TopNavigationBarComponent {
     public router: Router,
     private _snackBar: MatSnackBar,
   ) {}
-
+  
+  dropdown = false;
   users: any[] = JSON.parse(localStorage.getItem('users') || '');
   user: any[] = [];
   currUser: any = JSON.parse(localStorage.getItem('currentUser') || '');
@@ -35,5 +36,11 @@ export class TopNavigationBarComponent {
     });
     localStorage.setItem('users', JSON.stringify(this.users));
     localStorage.removeItem('currentUser');
+  }
+
+  toggleDrop(){
+    if(this.dropdown){
+      this.dropdown = true;
+    } else this.dropdown = false;
   }
 }

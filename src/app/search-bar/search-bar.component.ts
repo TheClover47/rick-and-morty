@@ -31,15 +31,12 @@ export class SearchBarComponent {
 
   onSearchSubmit() { //Search function for pressing enter
     this.searchValue = this.searchForm.value.searchValue ?? '';
-    console.log('On enter: ', this.searchValue);
     this.fetchCharacterData();
-    this.router.navigate(['browse']);
+    this.router.navigate(['characters']);
   }
   iconSearch() { //Search function for search icon
     this.searchValue = this.searchForm.value.searchValue ?? '';
-    console.log('Searching...');
-    console.log('Here: ', this.searchValue);
     this.fetchCharacterData();
-    this.router.navigate(['browse']);
+    this.router.navigate(['characters']);
   }
 }

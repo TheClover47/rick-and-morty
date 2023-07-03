@@ -35,13 +35,10 @@ export class LoactionListComponent {
       this.rnm.getLocations().forEach((data: any) => {
         if(this.rnm.filterChange == true){this.p = 1}
         this.locations = data.data.locations.results;
-        /* for (this.character of this.characters){
-          this.store.dispatch(new AddCharacterAction(this.character));
-        } */
-          this.locationCount = data.data.locations.info.count;
-          if(this.firstLoad){
-            this.firstLoad = false;
-          }
+        this.locationCount = data.data.locations.info.count;
+        if(this.firstLoad){
+          this.firstLoad = false;
+        }
       });
       }
     )
