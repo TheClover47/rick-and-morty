@@ -14,7 +14,7 @@
       </a>
     </div>
 
-    <!-- <div class="navbar-item">
+    <div class="navbar-item">
         <a class="nav-link" routerLink="/characters">
           <mat-icon class="fa fa-users fa-lg text-white"></mat-icon>
           <p>Characters</p>
@@ -22,24 +22,17 @@
     </div>
     <div class="navbar-item">
       <a class="nav-link" routerLink="/episodes">
-        <mat-icon class="fa fa-users fa-lg text-white"></mat-icon>
+        <mat-icon class="fa fa-film fa-lg text-white"></mat-icon>
         <p>Episodes</p>
       </a>
-    </div> -->
+    </div>
 
-    <mat-select placeholder="Browse" name="status" >
-      <i class="fa fa-book" aria-hidden="true"></i>
-      <div>
-          <mat-option value="dead">Dead</mat-option>
-      </div>
-      <div>
-          <mat-option value="alive">Alive</mat-option>                    
-      </div>
-      <div>
-          <mat-option value="unknown">Unknown</mat-option>
-      </div>
-    </mat-select>
-
+    <div class="navbar-item">
+      <a class="nav-link" routerLink="/locations">
+        <mat-icon class="fa fa-globe fa-lg text-white"></mat-icon>
+        <p>Loactions</p>
+      </a>
+    </div>
     <div class="mx-auto">
       <app-search-bar *ngIf="router.url === '/characters'"></app-search-bar>
     </div>

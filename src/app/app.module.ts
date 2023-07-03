@@ -25,6 +25,7 @@ import { LoaderInterceptor } from './services/loader.interceptor';
 import { FootNavComponent } from './foot-nav/foot-nav.component';
 import { EpisodesListComponent } from './episodes-list/episodes-list.component';
 import { EpisodeCardComponent } from './episode-card/episode-card.component';
+import { LocationCardComponent } from './location-card/location-card.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { EpisodeCardComponent } from './episode-card/episode-card.component';
     CharactersListComponent,
     TopNavigationBarComponent,
     CharacterCardComponent,
+    LocationCardComponent,
     DashboardComponent,
     SearchBarComponent,
     routingComponents,

@@ -1,0 +1,28 @@
+
+<div class="h-100">
+    <app-top-navigation-bar></app-top-navigation-bar>
+    <div class="card-list text-center mt-3">
+        <div *ngIf="firstLoad || (isLoading | async)">
+            <h1>Visiting the locations!</h1>
+            <mat-spinner [diameter]="70" class="spinner"></mat-spinner>
+        </div>
+        <div *ngIf="!firstLoad && !(isLoading | async)" class="container-fluid cards">
+            <div class="container mb-3 sort">
+                <div>
+                    <label class="me-2">Sort by Name Order:</label>
+                    <select [(ngModel)] = 'order'>
+                        <option value="">None</option>
+                        <option value="asc">Asc</option>
+                        <option value="desc">Desc</option>
+                    </select>
+                </div>
+            </div>
+            <app-location-card class="m-2" [location]="location" *ngFor="let location of locations | paginate:{ itemsPerPage: 20, currentPage: p, totalItems: locationCount} | sortBy: order: 'name'"></app-location-card>
+            <div class="container">
+                <pagination-controls (pageChange)="getPage($event)" class="float-center"
+                [maxSize]="5" previousLabel="" nextLabel="" [autoHide]="true">
+                </pagination-controls>
+            </div>
+        </div>
+    </div>
+</div>

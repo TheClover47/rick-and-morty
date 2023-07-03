@@ -32,6 +32,9 @@ a{
     width: fit-content;
     height: fit-content;
     padding-top: 5px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 mat-select{
     width: 15%;
