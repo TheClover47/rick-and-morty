@@ -1,10 +1,10 @@
 mat-card {
   text-align: center;
   width: 70%;
-  min-width: 350px;
+  min-width: 21.875rem;
   margin-top: 3%;
   margin-left: 1%;
-  box-shadow: 0 0 15px black;
+  box-shadow: 0 0 0.9375rem black;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -49,25 +49,25 @@ mat-card-content {
   justify-content: center;
   margin-left: 2rem;
 }
-@media only screen and (min-width: 450px) {
+@media only screen and (min-width: 28.125rem) {
   .profile-picture {
-    width: 240px;
+    width: 15rem;
     align-self: center;
-    margin-top: 10px;
+    margin-top: 0.625rem;
   }
 }
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 28.125rem) {
   .profile-picture {
-    max-width: 150px;
+    max-width: 9.375rem;
     align-self: center;
-    margin-top: 10px;
+    margin-top: 0.625rem;
   }
   .info {
     padding-bottom: 15%;
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 64rem) {
   .info {
     display: flex;
     flex-direction: column;
