@@ -1,6 +1,6 @@
 mat-card{
-    max-width: 300px;
-    min-width: 300px;
+    max-width: 18.75rem;
+    min-width: 18.75rem;
     width: auto;
     height: auto;
     display: inline-block;

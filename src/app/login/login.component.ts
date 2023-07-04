@@ -34,6 +34,6 @@ export class LoginComponent {
       this.submitted = true;
       this.router.navigate(['/dashboard']);
     }
-    else alert("Wrong details!")
+    else this.wrongdetails = true;
   }
 }

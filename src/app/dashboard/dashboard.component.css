@@ -2,7 +2,7 @@ mat-card{
     text-align: center;
     width: 70%;
     min-width: 220px;
-    margin-top: 3%;
+    margin-top: 2%;
     margin-left: 1%;
     padding-left: 5px;
     padding-right: 5px;
@@ -21,13 +21,23 @@ mat-card-content{
 }
 
 .info_div{
+    display: flex;
     justify-content: center;
     padding-bottom: auto;
 }
 
 .info{
-    width: fit-content;
     padding-bottom: 5%;
+    text-align: justify;
+}
+
+.thumbnail{
+    -webkit-user-drag: none;
+    width: auto;
+    height: auto;
+    max-height: 270px;
+    max-width: 480px;
+    float: right;
 }
 
 @media only screen and (min-width: 450px){
@@ -52,7 +62,7 @@ mat-card-content{
     .info{
         display: flex;
         flex-direction: column;
-        text-align: left;
-        margin-left: 30%;
+        text-align: justify;
+        width: 70%;
     }
 }
