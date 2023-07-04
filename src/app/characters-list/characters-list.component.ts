@@ -27,6 +27,7 @@ export class CharactersListComponent implements OnInit {
   constructor(private http: HttpClient ,private rnm: RnmApiService, private store: Store<AppState>, private loader: LoaderService) {
     this.rnm.currPage = 1;
     this.isLoading.next(true);
+    this.rnm.searchValue = '';
   }
 
   ngOnInit() {
