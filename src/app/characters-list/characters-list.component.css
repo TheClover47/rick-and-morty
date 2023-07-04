@@ -42,6 +42,7 @@ pagination-controls{
 @media only screen and (max-width: 450px){
        .card-list{
         float: right!important;
+        padding-bottom: 2.5rem;
        }
        .cards{
         margin-bottom: 55px;
