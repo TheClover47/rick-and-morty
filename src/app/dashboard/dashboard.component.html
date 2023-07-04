@@ -19,7 +19,7 @@
       </mat-card-content>
       <mat-card-subtitle *ngIf="user.lastLogin !== 'None'">
         Last login time:
-        {{ user.lastLogin ? user.lastLogin : ("-" | date : "short") }}
+        {{ user.lastLogin ? (user.lastLogin | date : "short") : "-" }}
       </mat-card-subtitle>
     </div>
   </mat-card>

@@ -1,6 +1,6 @@
 mat-card {
   text-align: center;
-  width: 70%;
+  width: 80%;
   min-width: 21.875rem;
   margin-top: 3%;
   margin-left: 1%;
@@ -17,10 +17,9 @@ mat-card {
   text-align: left;
 }
 .email {
-  margin-left: -2.5rem;
+  margin-left: -1rem;
 }
 mat-card-content {
-  align-self: center;
   display: flex;
   flex-direction: row;
 }
@@ -33,6 +32,10 @@ mat-card-content {
 .info_div {
   justify-content: center;
   padding-bottom: auto;
+}
+
+.profile-picture{
+  padding: 1rem;
 }
 
 .info {
@@ -61,6 +64,7 @@ mat-card-content {
     max-width: 9.375rem;
     align-self: center;
     margin-top: 0.625rem;
+    padding-right: 1.5rem;
   }
   .info {
     padding-bottom: 15%;
