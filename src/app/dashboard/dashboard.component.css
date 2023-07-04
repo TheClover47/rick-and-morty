@@ -1,68 +1,76 @@
-mat-card{
-    text-align: center;
-    width: 70%;
-    min-width: 220px;
-    margin-top: 2%;
-    margin-left: 1%;
-    padding-left: 5px;
-    padding-right: 5px;
-    box-shadow: 0 0 15px black;
+mat-card {
+  text-align: center;
+  width: 70%;
+  min-width: 21.875rem;
+  margin-top: 3%;
+  margin-left: 1%;
+  box-shadow: 0 0 0.9375rem black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 1.5rem;
+}
+.user-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+.email {
+  margin-left: -2.5rem;
+}
+mat-card-content {
+  align-self: center;
+  display: flex;
+  flex-direction: row;
 }
 
-mat-card-content{
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.info_div {
+  justify-content: center;
+  padding-bottom: auto;
+}
+
+.info {
+  width: fit-content;
+  padding-bottom: 5%;
+}
+.news-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 2rem;
+}
+@media only screen and (min-width: 28.125rem) {
+  .profile-picture {
+    width: 15rem;
     align-self: center;
+    margin-top: 0.625rem;
+  }
+}
+@media only screen and (max-width: 28.125rem) {
+  .profile-picture {
+    max-width: 9.375rem;
+    align-self: center;
+    margin-top: 0.625rem;
+  }
+  .info {
+    padding-bottom: 15%;
+  }
+}
+
+@media only screen and (min-width: 64rem) {
+  .info {
     display: flex;
-    flex-direction: row;
-}
-
-.main{
-    display: flex;
-    justify-content: center;
-}
-
-.info_div{
-    display: flex;
-    justify-content: center;
-    padding-bottom: auto;
-}
-
-.info{
-    padding-bottom: 5%;
-    text-align: justify;
-}
-
-.thumbnail{
-    -webkit-user-drag: none;
-    width: auto;
-    height: auto;
-    max-height: 270px;
-    max-width: 480px;
-    float: right;
-}
-
-@media only screen and (min-width: 450px){
-    .profile-picture{
-        width: 240px;
-        align-self: center;
-        margin-top: 10px;
-    }
-}
-@media only screen and (max-width: 450px){
-    .profile-picture{
-        max-width: 150px;
-        align-self: center;
-        margin-top: 10px;
-    }
-    .info{
-        padding-bottom: 15%;
-    }
-}
-
-@media only screen and (min-width: 1024px){
-    .info{
-        display: flex;
-        flex-direction: column;
-        text-align: justify;
-        width: 70%;
-    }
+    flex-direction: column;
+    text-align: left;
+  }
 }

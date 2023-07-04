@@ -1,38 +1,41 @@
-mat-card{
-    max-width: 300px;
-    min-width: 300px;
-    width: auto;
-    height: auto;
-    display: inline-block;
-    background-color: rgb(255, 255, 255);
-    border-radius: 3%;
-    margin-bottom: 3%;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;}
-
-mat-card-title{
-    white-space: nowrap;
-    overflow:scroll;
-    overflow-y: auto;
-    overflow-x: auto;
-    text-align: center;
+mat-card {
+  max-width: 18.75rem;
+  min-width: 18.75rem;
+  width: auto;
+  height: auto;
+  display: inline-block;
+  background-color: rgb(255, 255, 255);
+  border-radius: 3%;
+  margin-bottom: 3%;
+  box-shadow: rgba(17, 17, 26, 0.1) 0rem 0.25rem 1rem,
+    rgba(17, 17, 26, 0.1) 0rem 0.5rem 1.5rem,
+    rgba(17, 17, 26, 0.1) 0rem 1rem 3.5rem;
 }
 
-mat-card-title::-webkit-scrollbar{
-    width: 0;
-    height: 0;
+mat-card-title {
+  white-space: nowrap;
+  overflow: scroll;
+  overflow-y: auto;
+  overflow-x: auto;
+  text-align: center;
 }
 
-.mat-mdc-card-image{
-    max-width: 250px;
-    width: auto;
-    height: auto;
+mat-card-title::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
-p{
-    font-weight: bold;
+.mat-mdc-card-image {
+  max-width: 15.625rem;
+  width: auto;
+  height: auto;
 }
 
-button{
-    background-color: cornsilk;
-    width: 100%;
+p {
+  font-weight: bold;
+}
+
+button {
+  background-color: cornsilk;
+  width: 100%;
 }
