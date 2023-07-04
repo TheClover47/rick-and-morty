@@ -3,29 +3,60 @@
 <!-- user data card -->
 <div class="main">
   <mat-card>
-    <img
+    <div>
+      <img
         class="rounded-circle profile-picture"
         mat-card-image
         src="https://i.pravatar.cc/150?img=63"
         alt="Image"
       />
-    <mat-card-title>Welcome {{ user.name }}</mat-card-title>
-    <mat-card-content>
-      <mat-icon>email</mat-icon>
-      {{user.email}}
-    </mat-card-content>
-    <mat-card-subtitle *ngIf="user.lastLogin !== 'None'">
-      Last login time: {{ user.lastLogin }}
-    </mat-card-subtitle>
+    </div>
+    <div class="user-details">
+      <mat-card-title>Welcome {{ user.name }}</mat-card-title>
+      <mat-card-content class="email">
+        <mat-icon>email</mat-icon>
+        {{ user.email }}
+      </mat-card-content>
+      <mat-card-subtitle *ngIf="user.lastLogin !== 'None'">
+        Last login time:
+        {{ user.lastLogin | date : "short" }}
+      </mat-card-subtitle>
+    </div>
   </mat-card>
 </div>
-<hr>
+<hr />
 <div class="info_div">
   <div class="container info">
-    <h2>Latest news</h2>
-    <p>Cool stuff is hapenning. Great to have you here. We are going to make the world go nuts!</p>
-    <h2>Favourite Characters</h2>
-    <p>You haven't favourited any characters yet.</p>
+    <div class="news-wrapper">
+      <div>
+        <img
+          class="rounded-circle profile-picture"
+          mat-card-image
+          src="https://i.pravatar.cc/150?img=50"
+          alt="Image"
+        />
+      </div>
+      <div class="content-wrapper">
+        <h2>Latest news</h2>
+        <p>
+          Cool stuff is hapenning. Great to have you here. We are going to make
+          the world go nuts!
+        </p>
+      </div>
+    </div>
+    <div class="news-wrapper">
+      <div>
+        <img
+          class="rounded-circle profile-picture"
+          mat-card-image
+          src="https://i.pravatar.cc/150?img=37"
+          alt="Image"
+        />
+      </div>
+      <div class="content-wrapper">
+        <h2>Favourite Characters</h2>
+        <p>You haven't favourited any characters yet.</p>
+      </div>
+    </div>
   </div>
 </div>
-
