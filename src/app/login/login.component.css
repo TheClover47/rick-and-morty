@@ -40,6 +40,13 @@
   }
 }
 
+@media only screen and (max-width: 41.063rem){
+  .login {
+    width: 100%;
+    background-size: 25rem 25rem;
+  }
+}
+
 @media only screen and (max-width: 26.625rem) {
   .page {
     padding: 0;

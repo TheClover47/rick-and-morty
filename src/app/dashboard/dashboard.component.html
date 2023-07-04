@@ -12,14 +12,14 @@
       />
     </div>
     <div class="user-details">
-      <mat-card-title>Welcome {{ user.name }}</mat-card-title>
+      <mat-card-title>Welcome {{ user.name ? user.name : "-" }}</mat-card-title>
       <mat-card-content class="email">
         <mat-icon>email</mat-icon>
-        {{ user.email }}
+        {{ user.email ? user.email : "-" }}
       </mat-card-content>
       <mat-card-subtitle *ngIf="user.lastLogin !== 'None'">
         Last login time:
-        {{ user.lastLogin | date : "short" }}
+        {{ user.lastLogin ? user.lastLogin : ("-" | date : "short") }}
       </mat-card-subtitle>
     </div>
   </mat-card>

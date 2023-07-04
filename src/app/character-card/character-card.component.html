@@ -1,9 +1,9 @@
 <mat-card>
-  <mat-card-title>{{ character.name }}</mat-card-title>
+  <mat-card-title>{{ character.name ? character.name : "-" }}</mat-card-title>
   <img alt="profile-image" mat-card-image [src]="character.image" />
   <mat-card-content>
-    <p>Gender: {{ character.gender }}</p>
-    <p>Status: {{ character.status }}</p>
+    <p>Gender: {{ character.gender ? character.gender : "-" }}</p>
+    <p>Status: {{ character.status ? character.status : "-" }}</p>
   </mat-card-content>
   <mat-card-actions>
     <button mat-button (click)="onOpenDialog()">MORE INFO!</button>

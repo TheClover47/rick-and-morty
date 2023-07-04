@@ -1,11 +1,25 @@
-<h1 mat-dialog-title>Character: {{ characterItems[0].name }}!</h1>
+<h1 mat-dialog-title>
+  Character: {{ characterItems[0].name ? characterItems[0].name : "-" }}!
+</h1>
 <div mat-dialog-content>
-  <p>Gender: {{ characterItems[0].gender }}</p>
-  <p>Status: {{ characterItems[0].status }}</p>
-  <p>Species: {{ characterItems[0].species }}</p>
-  <p *ngIf="characterItems[0].type">Type: {{ characterItems[0].type }}</p>
-  <p>Origin: {{ characterItems[0].origin.name }}</p>
-  <p>Location: {{ characterItems[0].location.name }}</p>
+  <p>Gender: {{ characterItems[0].gender ? characterItems[0].gender : "-" }}</p>
+  <p>Status: {{ characterItems[0].status ? characterItems[0].status : "-" }}</p>
+  <p>
+    Species: {{ characterItems[0].species ? characterItems[0].species : "-" }}
+  </p>
+  <p *ngIf="characterItems[0].type">
+    Type: {{ characterItems[0].type ? characterItems[0].type : "-" }}
+  </p>
+  <p>
+    Origin:
+    {{ characterItems[0].origin.name ? characterItems[0].origin.name : "-" }}
+  </p>
+  <p>
+    Location:
+    {{
+      characterItems[0].location.name ? characterItems[0].location.name : "-"
+    }}
+  </p>
 </div>
 <div mat-dialog-actions align="center">
   <button mat-button (click)="onNoClick()">Close</button>

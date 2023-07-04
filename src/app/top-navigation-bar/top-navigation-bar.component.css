@@ -10,6 +10,11 @@
   font-size: 14pt;
   color: white;
 }
+a.mat-mdc-menu-item.mat-mdc-focus-indicator.mdc-list-item.nav-link.link-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
 
 .nav-link:hover {
   text-shadow: 0rem 0rem 0.1875rem black;
