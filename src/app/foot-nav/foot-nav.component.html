@@ -9,17 +9,17 @@
                 <p>Browse</p>
               </button>
               <mat-menu class="menu" #appMenu="matMenu">
-                <a mat-menu-item routerLink="/characters">
+                <a class="link-wrapper" mat-menu-item routerLink="/characters">
                   <mat-icon class="fa fa-users fa-lg text-white"></mat-icon>
-                  <p class="text-white">Characters</p>
+                  <div class="text-white">Characters</div>
                 </a>
-                <a mat-menu-item routerLink="/episodes">
+                <a class="link-wrapper" mat-menu-item routerLink="/episodes">
                   <mat-icon class="fa fa-film fa-lg text-white"></mat-icon>
-                  <p class="text-white">Episodes</p>
+                  <div class="text-white">Episodes</div>
                 </a>
-                <a mat-menu-item routerLink="/locations">
+                <a class="link-wrapper" mat-menu-item routerLink="/locations">
                   <mat-icon class="fa fa-globe fa-lg text-white"></mat-icon>
-                  <p class="text-white">Locations</p>
+                  <div class="text-white">Locations</div>
                 </a>
               </mat-menu>
             <a class="foot-link" (click)="logOut()">
