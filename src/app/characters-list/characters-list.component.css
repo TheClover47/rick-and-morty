@@ -45,5 +45,6 @@ pagination-controls{
        }
        .cards{
         margin-bottom: 55px;
+        min-height: 32rem;
        }
 }
