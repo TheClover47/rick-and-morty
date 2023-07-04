@@ -40,3 +40,12 @@ button {
     rgba(9, 30, 66, 0.08) 0rem 0rem 0rem 0.0625rem;
   width: 100%;
 }
+
+@media only screen and (max-width: 300px){
+  mat-card {
+    max-width: 14rem;
+  }
+  .mat-mdc-card-image{
+    max-width: 14rem;
+  }
+}

@@ -49,6 +49,7 @@ mat-select {
 @media only screen and (max-width: 28.125rem) {
   .navigation {
     display: none;
+    width: 100%;
   }
   .navbar {
     display: contents;
@@ -70,4 +71,5 @@ mat-select {
     min-height: 3.375rem;
     overflow-x: auto;
   }
+
 }
