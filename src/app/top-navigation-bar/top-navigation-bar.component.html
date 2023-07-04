@@ -1,43 +1,43 @@
 <!-- top nav -->
 <div class="navigation flex-row-reverse p-2">
-    <div class="navbar-item">
-      <a class="nav-link" (click)="logOut()">
-        <mat-icon class="fa fa-sign-out fa-lg text-white"></mat-icon>
-        <p>Log out</p>
+  <div class="navbar-item">
+    <a class="nav-link" (click)="logOut()">
+      <mat-icon class="fa fa-sign-out fa-lg text-white"></mat-icon>
+      <p>Log out</p>
+    </a>
+  </div>
+
+  <div class="navbar-item">
+    <a class="nav-link" routerLink="/dashboard">
+      <mat-icon class="fa fa-user fa-lg text-white"></mat-icon>
+      <p>Profile</p>
+    </a>
+  </div>
+
+  <div class="navbar-item">
+    <button class="nav-link" [matMenuTriggerFor]="appMenu">
+      <mat-icon class="fa fa-book fa-lg text-white"></mat-icon>
+      <p>Browse</p>
+    </button>
+    <mat-menu class="menu" #appMenu="matMenu">
+      <a class="nav-link link-wrapper" mat-menu-item routerLink="/characters">
+        <mat-icon class="fa fa-users fa-lg text-white"></mat-icon>
+        <div class="text-white">Characters</div>
       </a>
-    </div>
-
-    <div class="navbar-item">
-      <a class="nav-link" routerLink="/dashboard">
-        <mat-icon class="fa fa-user fa-lg text-white"></mat-icon>
-        <p>Profile</p>
+      <a class="nav-link link-wrapper" mat-menu-item routerLink="/episodes">
+        <mat-icon class="fa fa-film fa-lg text-white"></mat-icon>
+        <div class="text-white">Episodes</div>
       </a>
-    </div>
+      <a class="nav-link link-wrapper" mat-menu-item routerLink="/locations">
+        <mat-icon class="fa fa-globe fa-lg text-white"></mat-icon>
+        <div class="text-white">Locations</div>
+      </a>
+    </mat-menu>
+  </div>
 
-    <div class="navbar-item">
-      <button class="nav-link" [matMenuTriggerFor]="appMenu">
-        <mat-icon class="fa fa-book fa-lg text-white"></mat-icon>
-        <p>Browse</p>
-      </button>
-      <mat-menu class="menu" #appMenu="matMenu">
-        <a class="nav-link " mat-menu-item routerLink="/characters">
-          <mat-icon class="fa fa-users fa-lg text-white"></mat-icon>
-          <p class="text-white">Characters</p>
-        </a>
-        <a class="nav-link " mat-menu-item routerLink="/episodes">
-          <mat-icon class="fa fa-film fa-lg text-white"></mat-icon>
-          <p class="text-white">Episodes</p>
-        </a>
-        <a class="nav-link " mat-menu-item routerLink="/locations">
-          <mat-icon class="fa fa-globe fa-lg text-white"></mat-icon>
-          <p class="text-white">Locations</p>
-        </a>
-      </mat-menu>
-    </div>
-
-    <div class="mx-auto">
-      <app-search-bar *ngIf="router.url === '/characters'"></app-search-bar>
-    </div>
+  <div class="mx-auto">
+    <app-search-bar *ngIf="router.url === '/characters'"></app-search-bar>
+  </div>
 </div>
 
 <!-- mobile top nav -->
